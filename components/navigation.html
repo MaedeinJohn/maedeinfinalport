@@ -1,0 +1,151 @@
+<!-- =========================
+     SHARED NAVIGATION
+========================= -->
+
+<aside class="sidebar">
+
+    <!-- PROFILE -->
+    <div class="profile">
+
+        <div class="profile-photo">
+
+            <img
+                src="../assets/profile.JPG.JPG"
+                alt="Maedein John P. Cabalo"
+            >
+
+        </div>
+
+        <h2>Maedein John P. Cabalo</h2>
+
+        <p>@cmaedein • Graphic Designer</p>
+
+    </div>
+
+
+    <!-- SOCIALS + THEME -->
+    <div class="socials">
+
+        <a href="https://www.facebook.com/maedeincabalo" aria-label="Facebook">
+            f
+        </a>
+
+        <a href="https://www.linkedin.com/feed/" aria-label="LinkedIn">
+            in
+        </a>
+
+        <a href="https://www.instagram.com/itzme_dein/" aria-label="Instagram">
+            ▢
+        </a>
+
+        <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle dark mode"
+        >
+            <span class="theme-icon">☾</span>
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="side-nav">
+
+        <!-- HOME -->
+        <a
+            href="../index/index.html"
+            data-page="home"
+        >
+            <span>⌂</span>
+            <strong>Home</strong>
+        </a>
+
+
+        <!-- PROJECTS -->
+        <a
+            href="../page/projects.html"
+            data-page="projects"
+        >
+            <span>□</span>
+            <strong>Projects</strong>
+        </a>
+
+
+        <!-- SERVICES -->
+        <a
+            href="../page/services.html"
+            data-page="services"
+        >
+            <span>◇</span>
+            <strong>Services</strong>
+        </a>
+
+
+        <!-- TOOLS -->
+        <a
+            href="../page/tools.html"
+            data-page="tools"
+        >
+            <span>✦</span>
+            <strong>Tools</strong>
+        </a>
+
+
+        <!-- SKILLS -->
+        <a
+            href="../page/skills.html"
+            data-page="skills"
+        >
+            <span>☆</span>
+            <strong>Skills</strong>
+        </a>
+
+
+        <!-- ABOUT -->
+        <a
+            href="../page/about.html"
+            data-page="about"
+        >
+            <span>♙</span>
+            <strong>About</strong>
+        </a>
+
+
+        <!-- CONTACT -->
+        <a
+            href="../page/contact.html"
+            data-page="contact"
+        >
+            <span>✉</span>
+            <strong>Contact</strong>
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<!-- =====================================================
+     IMPORTANT:
+     Kapag DIRECTLY binuksan ang navigation.html,
+     automatic itong pupunta sa Home.
+===================================================== -->
+
+<script>
+
+    if (
+        window.location.pathname.endsWith(
+            "/components/navigation.html"
+        )
+    ) {
+
+        window.location.href =
+            "../index/index.html";
+
+    }
+
+</script>
