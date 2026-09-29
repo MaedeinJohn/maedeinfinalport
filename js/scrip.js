@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
     /* =====================================================
        LOAD SHARED NAVIGATION
     ===================================================== */
@@ -8,76 +7,52 @@ document.addEventListener("DOMContentLoaded", function () {
     const navigation =
         document.getElementById("navigation");
 
+    if (navigation) {
 
-    if (!navigation) {
+        fetch("../components/navigation.html")
+
+            .then(function (response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load navigation.html"
+                    );
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(function (data) {
+
+                navigation.innerHTML = data;
+
+                setActiveNavigation();
+
+                initializeTheme();
+
+                initializeVisitorCounter();
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "Navigation Error:",
+                    error
+                );
+
+            });
+
+    } else {
 
         console.log(
             "Navigation container not found."
         );
 
-        return;
-
     }
-
-
-    fetch("../components/navigation.html")
-
-        .then(function (response) {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Unable to load navigation.html"
-                );
-
-            }
-
-            return response.text();
-
-        })
-
-
-        .then(function (data) {
-
-            /*
-             * Insert navigation into the page
-             */
-
-            navigation.innerHTML = data;
-
-
-            /*
-             * Set active navigation
-             */
-
-            setActiveNavigation();
-
-
-            /*
-             * Initialize dark mode
-             */
-
-            initializeTheme();
-
-
-            /*
-             * Initialize visitor counter
-             */
-
-            initializeVisitorCounter();
-
-        })
-
-
-        .catch(function (error) {
-
-            console.error(
-                "Navigation Error:",
-                error
-            );
-
-        });
-
 
 
     /* =====================================================
@@ -86,19 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setActiveNavigation() {
 
-
         const links =
             document.querySelectorAll(
                 ".side-nav a"
             );
 
-
         const currentPage =
             window.location.pathname;
 
-
         links.forEach(function (link) {
-
 
             const linkPage =
                 new URL(
@@ -106,19 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     window.location.href
                 ).pathname;
 
-
-            /*
-             * Remove active first
-             */
-
             link.classList.remove(
                 "active"
             );
-
-
-            /*
-             * Add active to current page
-             */
 
             if (
                 currentPage === linkPage
@@ -135,29 +96,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
        DARK MODE
     ===================================================== */
 
     function initializeTheme() {
 
-
         const themeToggle =
             document.getElementById(
                 "themeToggle"
             );
 
-
         const themeIcon =
             document.querySelector(
                 ".theme-icon"
             );
-
-
-        /*
-         * Get saved theme
-         */
 
         const savedTheme =
             localStorage.getItem(
@@ -165,9 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /*
-         * Load dark mode
-         */
+        /* =================================================
+           LOAD SAVED THEME
+        ================================================= */
 
         if (
             savedTheme === "dark"
@@ -177,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "dark"
             );
 
-
             if (themeIcon) {
 
                 themeIcon.textContent =
@@ -185,26 +137,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
+        } else {
+
+            document.body.classList.remove(
+                "dark"
+            );
+
+            if (themeIcon) {
+
+                themeIcon.textContent =
+                    "☾";
+
+            }
+
         }
 
 
-
         /* =================================================
-           TOGGLE DARK MODE
+           THEME TOGGLE
         ================================================= */
 
         if (themeToggle) {
-
 
             themeToggle.addEventListener(
                 "click",
                 function () {
 
-
                     document.body.classList.toggle(
                         "dark"
                     );
-
 
                     const isDark =
                         document.body.classList.contains(
@@ -214,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (isDark) {
 
-
                         if (themeIcon) {
 
                             themeIcon.textContent =
@@ -222,15 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         }
 
-
                         localStorage.setItem(
                             "theme",
                             "dark"
                         );
 
-
                     } else {
-
 
                         if (themeIcon) {
 
@@ -238,7 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                 "☾";
 
                         }
-
 
                         localStorage.setItem(
                             "theme",
@@ -255,24 +211,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
        VISITOR COUNTER
     ===================================================== */
 
     function initializeVisitorCounter() {
 
-
         const visitorCount =
             document.getElementById(
                 "visitorCount"
             );
 
-
-        /*
-         * Stop if visitor counter
-         * does not exist
-         */
 
         if (!visitorCount) {
 
@@ -281,23 +230,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /*
-         * Unique counter name
-         */
-
         const counterKey =
             "maedein_john_portfolio_visitors_2026";
 
-
-        /*
-         * Count the visit
-         */
 
         fetch(
             "https://countapi.mileshilliard.com/api/v1/hit/" +
             counterKey
         )
-
 
             .then(function (response) {
 
@@ -313,12 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             })
 
-
             .then(function (data) {
-
-                /*
-                 * Display visitor count
-                 */
 
                 if (
                     data &&
@@ -334,18 +269,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             })
 
-
             .catch(function (error) {
 
                 console.error(
                     "Visitor Counter Error:",
                     error
                 );
-
-
-                /*
-                 * Fallback value
-                 */
 
                 visitorCount.textContent =
                     "0";
@@ -355,10 +284,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     /* =====================================================
        PORTFOLIO LOADING SCREEN
-       ADDED ONLY
     ===================================================== */
 
     const loadingScreen =
