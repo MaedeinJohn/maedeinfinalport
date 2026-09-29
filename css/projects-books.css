@@ -1,0 +1,1749 @@
+/* =========================================================
+   PROJECTS BOOKS
+   projects.html
+   adventure.html
+   goldenrim.html
+   hmom.html
+   j&j.html
+   mfc.html
+========================================================= */
+
+
+/* =========================================================
+   PROJECT PAGE
+========================================================= */
+
+.projects-page,
+.client-page {
+
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 30px 40px 60px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.projects-intro {
+
+    margin-bottom: 28px;
+}
+
+
+.projects-intro h1 {
+
+    margin: 0 0 8px;
+
+    color: #102b52;
+
+    font-size: 36px;
+
+    font-weight: 800;
+}
+
+
+.projects-intro p {
+
+    max-width: 950px;
+
+    margin: 0;
+
+    color: #60728b;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        .95fr
+        .95fr;
+
+    grid-template-rows:
+        285px
+        285px;
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PROJECT BOX
+========================================================= */
+
+.project-box {
+
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    padding: 23px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8dde4;
+
+    border-radius: 26px;
+
+    background: #faf9f5;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+.project-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.project-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #ff7118;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+
+.project-box h2 {
+
+    margin: 1px 0 6px;
+
+    color: #102b52;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+.project-box p {
+
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #60728b;
+
+    font-size: 14px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CARD POSITIONS
+
+   SOCIAL MEDIA = LARGE LEFT
+   LOGO DESIGN = SMALL RIGHT
+========================================================= */
+
+.social-box {
+
+    grid-column: 1 / 3;
+
+    grid-row: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.logo-box {
+
+    grid-column: 3;
+
+    grid-row: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.brand-box {
+
+    grid-column: 1;
+
+    grid-row: 2;
+}
+
+
+.web-box {
+
+    grid-column: 2;
+
+    grid-row: 2;
+}
+
+
+.graphic-box {
+
+    grid-column: 3;
+
+    grid-row: 2;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.logo-box:hover,
+.social-box:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #ff7118;
+
+    box-shadow:
+        0 12px 30px rgba(16, 43, 82, .10);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
+
+.social-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    width: 48%;
+
+    max-width: 48%;
+}
+
+
+.social-tags span {
+
+    padding: 8px 12px;
+
+    border: 1px solid #d8dde4;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #102b52;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA POST PREVIEW
+========================================================= */
+
+.social-post-preview {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 22px;
+
+    width: 235px;
+
+    height: 235px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #eeeeee;
+
+    border: 1px solid #d8dde4;
+
+    z-index: 10;
+}
+
+
+.social-post-slider {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    transform: translateY(0);
+}
+
+
+.social-post-slide {
+
+    width: 235px;
+
+    height: 235px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA IMAGE
+
+   FULL IMAGE
+   NO CROP
+========================================================= */
+
+.social-post-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA OVERLAY
+
+   TINANGGAL ANG COLOR COVER
+========================================================= */
+
+.social-post-overlay {
+
+    display: none;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA SCROLL
+========================================================= */
+
+.social-box:hover .social-post-slider {
+
+    animation:
+        socialPostScroll 22s linear infinite;
+}
+
+
+@keyframes socialPostScroll {
+
+    0% {
+
+        transform: translateY(0);
+    }
+
+    100% {
+
+        transform: translateY(-2350px);
+    }
+}
+
+
+/* =========================================================
+   VIEW DESIGNS
+========================================================= */
+
+.view-designs {
+
+    position: absolute;
+
+    left: 23px;
+
+    bottom: 20px;
+
+    color: #ff7118;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   LOGO DESIGN PREVIEW
+========================================================= */
+
+.logo-preview {
+
+    position: absolute;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: calc(100% - 36px);
+
+    height: 125px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #eeeeee;
+}
+
+
+.logo-slider {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 1250px;
+
+    transform: translateY(0);
+}
+
+
+.logo-slide {
+
+    width: 100%;
+
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.logo-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   LOGO SCROLL
+========================================================= */
+
+.logo-box:hover .logo-slider {
+
+    animation:
+        logoScroll 18s linear infinite;
+}
+
+
+@keyframes logoScroll {
+
+    0% {
+
+        transform: translateY(0);
+    }
+
+    100% {
+
+        transform: translateY(-1125px);
+    }
+}
+
+
+/* =========================================================
+   LOGO OVERLAY
+
+   TINANGGAL ANG COLOR COVER
+========================================================= */
+
+.logo-preview-text {
+
+    display: none;
+}
+
+
+/* =========================================================
+   BRAND IDENTITY
+========================================================= */
+
+.brand-placeholder {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -45px;
+
+    width: 180px;
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #f1efe8;
+
+    color: #102b52;
+
+    font-size: 58px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   WEB DESIGN
+========================================================= */
+
+.web-items {
+
+    margin-top: 18px;
+}
+
+
+.web-items div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #e1e3e5;
+
+    color: #102b52;
+
+    font-size: 13px;
+}
+
+
+.web-items strong {
+
+    color: #ff7118;
+}
+
+
+/* =========================================================
+   GRAPHIC DESIGN
+========================================================= */
+
+.graphic-items {
+
+    margin-top: 18px;
+}
+
+
+.graphic-items div {
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #e1e3e5;
+
+    color: #102b52;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA FOLDERS
+========================================================= */
+
+.social-folders {
+
+    margin-top: 40px;
+
+    padding-top: 38px;
+
+    border-top: 1px solid #d8dde4;
+}
+
+
+.social-folder-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.small-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #ff7118;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.social-folder-header h2 {
+
+    margin: 0 0 5px;
+
+    color: #102b52;
+
+    font-size: 29px;
+}
+
+
+.social-folder-header p {
+
+    margin: 0;
+
+    color: #60728b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CLIENT FOLDERS
+========================================================= */
+
+.folders-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.client-folder {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d8dde4;
+
+    border-radius: 23px;
+
+    background: #faf9f5;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.client-folder:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #ff7118;
+
+    box-shadow:
+        0 12px 30px rgba(16, 43, 82, .10);
+}
+
+
+.folder-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 14px;
+
+    background: #ff7118;
+
+    font-size: 23px;
+}
+
+
+.folder-count {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 22px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #f0eee8;
+
+    color: #60728b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.client-folder h3 {
+
+    margin: 0 0 7px;
+
+    color: #102b52;
+
+    font-size: 20px;
+}
+
+
+.client-folder p {
+
+    margin: 0;
+
+    color: #60728b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.open-folder {
+
+    position: absolute;
+
+    left: 22px;
+
+    bottom: 19px;
+
+    color: #ff7118;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CLIENT PAGE
+========================================================= */
+
+.client-page {
+
+    padding-top: 30px;
+}
+
+
+.back-projects {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: #ff7118;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.back-projects:hover {
+
+    text-decoration: underline;
+}
+
+
+.client-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    border: 1px solid #d8dde4;
+
+    border-radius: 24px;
+
+    background: #faf9f5;
+}
+
+
+.client-main-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #ff7118;
+
+    font-size: 26px;
+}
+
+
+.client-header h1 {
+
+    margin: 0 0 6px;
+
+    color: #102b52;
+
+    font-size: 30px;
+}
+
+
+.client-header p {
+
+    max-width: 900px;
+
+    margin: 0;
+
+    color: #60728b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.design-count {
+
+    margin-bottom: 15px;
+
+    color: #102b52;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DESIGN GALLERY
+========================================================= */
+
+.design-gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+.design-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid #d8dde4;
+
+    border-radius: 17px;
+
+    background: #eeeeee;
+
+    cursor: pointer;
+}
+
+
+.design-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.design-item:hover img {
+
+    transform: scale(1.05);
+}
+
+
+.design-number {
+
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 10px;
+
+    z-index: 2;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(16, 43, 82, .90);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
+========================================================= */
+
+.image-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(5, 10, 20, .94);
+}
+
+
+.image-lightbox.active {
+
+    display: flex;
+}
+
+
+.lightbox-content {
+
+    width: min(1000px, 90vw);
+
+    max-height: 92vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.lightbox-image {
+
+    max-width: 100%;
+
+    max-height: 76vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+}
+
+
+.lightbox-number {
+
+    margin-bottom: 12px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, .10);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 1px solid rgba(255, 255, 255, .3);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.lightbox-close:hover {
+
+    background: #ff7118;
+}
+
+
+.lightbox-prev,
+.lightbox-next {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: 1px solid rgba(255, 255, 255, .3);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+.lightbox-prev {
+
+    left: 25px;
+}
+
+
+.lightbox-next {
+
+    right: 25px;
+}
+
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+
+    background: #ff7118;
+}
+
+
+/* =========================================================
+   THUMBNAILS
+========================================================= */
+
+.lightbox-thumbnails {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    padding: 8px;
+
+    overflow-x: auto;
+
+    border-radius: 12px;
+
+    background:
+        rgba(0, 0, 0, .35);
+}
+
+
+.lightbox-thumb {
+
+    position: relative;
+
+    flex: 0 0 55px;
+
+    width: 55px;
+
+    height: 55px;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.lightbox-thumb img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.lightbox-thumb.active {
+
+    border-color: #ff7118;
+}
+
+
+.lightbox-thumb-number {
+
+    position: absolute;
+
+    right: 2px;
+
+    bottom: 2px;
+
+    padding: 2px 4px;
+
+    border-radius: 4px;
+
+    background:
+        rgba(0, 0, 0, .75);
+
+    color: #ffffff;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   LOGO GALLERY
+========================================================= */
+
+.logo-design-item {
+
+    border: 1px solid #d8dde4;
+
+    padding: 0;
+}
+
+
+.logo-design-item img {
+
+    object-fit: contain;
+
+    padding: 14px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .project-box,
+body.dark-mode .client-folder,
+body.dark-mode .client-header {
+
+    background: #101827;
+
+    border-color: #263449;
+}
+
+
+body.dark-mode .projects-intro h1,
+body.dark-mode .project-box h2,
+body.dark-mode .social-folder-header h2,
+body.dark-mode .client-folder h3,
+body.dark-mode .client-header h1,
+body.dark-mode .design-count {
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .projects-intro p,
+body.dark-mode .project-box p,
+body.dark-mode .social-folder-header p,
+body.dark-mode .client-folder p,
+body.dark-mode .client-header p {
+
+    color: #aeb9ca;
+}
+
+
+body.dark-mode .social-tags span {
+
+    background: #1b2638;
+
+    border-color: #263449;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .folder-count {
+
+    background: #1b2638;
+
+    color: #aeb9ca;
+}
+
+
+body.dark-mode .web-items div,
+body.dark-mode .graphic-items div {
+
+    color: #ffffff;
+
+    border-color: #263449;
+}
+
+
+body.dark-mode .logo-preview,
+body.dark-mode .social-post-preview {
+
+    background: #1b2638;
+
+    border-color: #263449;
+}
+
+
+body.dark-mode .logo-design-item img {
+
+    background: #101827;
+}
+
+
+body.dark-mode .logo-design-item {
+
+    border-color: #263449;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .projects-page,
+    .client-page {
+
+        padding: 25px;
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-rows:
+            280px
+            260px
+            260px;
+    }
+
+
+    /* SOCIAL MEDIA - LARGE */
+
+    .social-box {
+
+        grid-column: 1 / 3;
+
+        grid-row: 1;
+    }
+
+
+    /* LOGO DESIGN */
+
+    .logo-box {
+
+        grid-column: 1;
+
+        grid-row: 2;
+    }
+
+
+    /* BRAND */
+
+    .brand-box {
+
+        grid-column: 2;
+
+        grid-row: 2;
+    }
+
+
+    /* WEB */
+
+    .web-box {
+
+        grid-column: 1;
+
+        grid-row: 3;
+    }
+
+
+    /* GRAPHIC */
+
+    .graphic-box {
+
+        grid-column: 2;
+
+        grid-row: 3;
+    }
+
+
+    .social-post-preview {
+
+        width: 190px;
+
+        height: 190px;
+
+        top: 20px;
+
+        right: 20px;
+    }
+
+
+    .social-post-slide {
+
+        width: 190px;
+
+        height: 190px;
+    }
+
+
+    .social-tags {
+
+        width: 48%;
+
+        max-width: 48%;
+    }
+
+
+    .social-box .project-heading > div:last-child {
+
+        padding-right: 210px;
+    }
+
+
+    @keyframes socialPostScroll {
+
+        0% {
+
+            transform: translateY(0);
+        }
+
+        100% {
+
+            transform: translateY(-1900px);
+        }
+    }
+
+
+    .logo-preview {
+
+        height: 110px;
+
+        width: calc(100% - 36px);
+    }
+
+
+    .logo-slider {
+
+        height: 1100px;
+    }
+
+
+    .logo-slide {
+
+        height: 110px;
+    }
+
+
+    @keyframes logoScroll {
+
+        0% {
+
+            transform: translateY(0);
+        }
+
+        100% {
+
+            transform: translateY(-990px);
+        }
+    }
+
+
+    .folders-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .design-gallery {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .projects-page,
+    .client-page {
+
+        padding: 20px 15px 45px;
+    }
+
+
+    .projects-intro h1 {
+
+        font-size: 28px;
+    }
+
+
+    .projects-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+    }
+
+
+    .logo-box,
+    .brand-box,
+    .social-box,
+    .web-box,
+    .graphic-box {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+        min-height: 270px;
+    }
+
+
+    /* =====================================================
+       MOBILE LOGO PREVIEW
+    ===================================================== */
+
+    .logo-preview {
+
+        position: absolute;
+
+        right: 18px;
+
+        left: 18px;
+
+        bottom: 18px;
+
+        width: auto;
+
+        height: 145px;
+    }
+
+
+    .logo-slider {
+
+        height: 1450px;
+    }
+
+
+    .logo-slide {
+
+        height: 145px;
+
+        padding: 15px;
+    }
+
+
+    @keyframes logoScroll {
+
+        0% {
+
+            transform: translateY(0);
+        }
+
+        100% {
+
+            transform: translateY(-1305px);
+        }
+    }
+
+
+    /* =====================================================
+       MOBILE SOCIAL MEDIA
+    ===================================================== */
+
+    .social-post-preview {
+
+        top: auto;
+
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 125px;
+
+        height: 125px;
+    }
+
+
+    .social-post-slide {
+
+        width: 125px;
+
+        height: 125px;
+    }
+
+
+    .social-tags {
+
+        width: auto;
+
+        max-width: 100%;
+
+        padding-right: 140px;
+
+        box-sizing: border-box;
+    }
+
+
+    .social-box .project-heading > div:last-child {
+
+        padding-right: 0;
+    }
+
+
+    @keyframes socialPostScroll {
+
+        0% {
+
+            transform: translateY(0);
+        }
+
+        100% {
+
+            transform: translateY(-1250px);
+        }
+    }
+
+
+    .folders-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .client-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .client-header h1 {
+
+        font-size: 26px;
+    }
+
+
+    .design-gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .lightbox-prev {
+
+        left: 10px;
+    }
+
+
+    .lightbox-next {
+
+        right: 10px;
+    }
+
+
+    .lightbox-image {
+
+        max-width: 88vw;
+
+        max-height: 70vh;
+    }
+
+}

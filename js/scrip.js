@@ -59,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             initializeTheme();
 
+
+            /*
+             * Initialize visitor counter
+             */
+
+            initializeVisitorCounter();
+
         })
 
 
@@ -244,6 +251,141 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         }
+
+    }
+
+
+
+    /* =====================================================
+       VISITOR COUNTER
+    ===================================================== */
+
+    function initializeVisitorCounter() {
+
+
+        const visitorCount =
+            document.getElementById(
+                "visitorCount"
+            );
+
+
+        /*
+         * Stop if visitor counter
+         * does not exist
+         */
+
+        if (!visitorCount) {
+
+            return;
+
+        }
+
+
+        /*
+         * Unique counter name
+         */
+
+        const counterKey =
+            "maedein_john_portfolio_visitors_2026";
+
+
+        /*
+         * Count the visit
+         */
+
+        fetch(
+            "https://countapi.mileshilliard.com/api/v1/hit/" +
+            counterKey
+        )
+
+
+            .then(function (response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Visitor counter request failed"
+                    );
+
+                }
+
+                return response.json();
+
+            })
+
+
+            .then(function (data) {
+
+                /*
+                 * Display visitor count
+                 */
+
+                if (
+                    data &&
+                    data.value !== undefined
+                ) {
+
+                    visitorCount.textContent =
+                        Number(
+                            data.value
+                        ).toLocaleString();
+
+                }
+
+            })
+
+
+            .catch(function (error) {
+
+                console.error(
+                    "Visitor Counter Error:",
+                    error
+                );
+
+
+                /*
+                 * Fallback value
+                 */
+
+                visitorCount.textContent =
+                    "0";
+
+            });
+
+    }
+
+
+
+    /* =====================================================
+       PORTFOLIO LOADING SCREEN
+       ADDED ONLY
+    ===================================================== */
+
+    const loadingScreen =
+        document.getElementById(
+            "loading-screen"
+        );
+
+
+    if (loadingScreen) {
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        loadingScreen.classList.add(
+                            "hide"
+                        );
+
+                    },
+                    2200
+                );
+
+            }
+        );
 
     }
 
