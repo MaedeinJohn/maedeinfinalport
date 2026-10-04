@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Collections | Maedein John P. Cabalo</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects-books.css">
+
+    <style>
+        .cc-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px 70px;
+        }
+
+        .cc-header {
+            margin-bottom: 30px;
+        }
+
+        .cc-header h1 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin: 10px 0;
+        }
+
+        .cc-header p {
+            max-width: 650px;
+            line-height: 1.8;
+            opacity: 0.75;
+        }
+
+        .cc-label {
+            color: #0891b2;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .cc-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0 40px;
+        }
+
+        .cc-filter {
+            padding: 10px 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 30px;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+            font: inherit;
+            transition: 0.2s;
+        }
+
+        .cc-filter:hover,
+        .cc-filter.active {
+            background: #0f172a;
+            color: white;
+            border-color: #0f172a;
+        }
+
+        .cc-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 100px;
+        }
+
+        .cc-section[hidden] {
+            display: none !important;
+        }
+
+        .cc-section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .cc-section-heading h2 {
+            margin: 0 0 7px;
+            font-size: 25px;
+        }
+
+        .cc-section-heading p {
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .cc-count {
+            font-size: 13px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: rgba(148, 163, 184, 0.15);
+        }
+
+        .cc-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .cc-card {
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 12px;
+            background: var(--card-bg, #fff);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .cc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        /* BUTTON LANG ANG IMAGE: WALANG PAGE REDIRECT */
+        .cc-image-button {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            text-align: left;
+            cursor: zoom-in;
+            font: inherit;
+        }
+
+        .cc-image-button img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: #f1f5f9;
+        }
+
+        .cc-image-button:focus-visible {
+            outline: 3px solid #06b6d4;
+            outline-offset: -3px;
+        }
+
+        .cc-card-info {
+            padding: 12px;
+        }
+
+        .cc-card-info h3 {
+            margin: 0;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .cc-card-info span {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.65;
+        }
+
+        .cc-back {
+            display: inline-block;
+            margin-top: 15px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .cc-back:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================================
+           IMAGE ENLARGEMENT / LIGHTBOX
+        ================================== */
+
+        .cc-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 24px 45px;
+            background: rgba(0, 0, 0, 0.90);
+            backdrop-filter: blur(5px);
+        }
+
+        .cc-lightbox.open {
+            display: flex;
+        }
+
+        .cc-lightbox-image {
+            display: block;
+            max-width: 92vw;
+            max-height: 82vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            animation: ccZoomIn 0.22s ease;
+        }
+
+        .cc-lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 22px;
+
+            width: 46px;
+            height: 46px;
+
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .cc-lightbox-close:hover {
+            background: white;
+            color: #111827;
+        }
+
+        .cc-lightbox-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        body.cc-no-scroll {
+            overflow: hidden !important;
+        }
+
+        @keyframes ccZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .cc-gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .cc-page {
+                padding: 28px 15px 50px;
+            }
+
+            .cc-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .cc-section-heading h2 {
+                font-size: 21px;
+            }
+
+            .cc-lightbox {
+                padding: 55px 12px 40px;
+            }
+
+            .cc-lightbox-image {
+                max-width: 96vw;
+                max-height: 78vh;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cc-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EXISTING NAVIGATION -->
+    <div id="navigation"></div>
+
+    <main class="main-content">
+
+        <div class="cc-page">
+
+            <!-- PAGE HEADER -->
+            <header class="cc-header">
+    <a href="projects.html" class="cc-back">
+                ← Back to Projects
+            </a>
+            <br>
+                <span class="cc-label">GRAPHIC DESIGN PORTFOLIO</span>
+
+                <h1>Client Collections</h1>
+
+                <p>
+                    Select a client collection to explore the designs
+                    created for that brand. Click any image to view
+                    it in a larger preview.
+                </p>
+
+            </header>
+
+            <!-- FILTER BUTTONS -->
+            <nav class="cc-filters" aria-label="Filter designs">
+
+                <button type="button"
+                        class="cc-filter active"
+                        data-filter="all">
+                    All Designs
+                </button>
+
+                <button type="button"
+                        class="cc-filter"
+                        data-filter="golden-rim">
+                    Golden Rim
+                </button>
+
+                <button type="button"
+                        class="cc-filter"
+                        data-filter="jj">
+                    Jean &amp; Jianna's
+                </button>
+
+                <button type="button"
+                        class="cc-filter"
+                        data-filter="mfc">
+                    Malachi Finance
+                </button>
+
+            </nav>
+
+            <!-- JAVASCRIPT WILL GENERATE THE GALLERIES -->
+            <div id="ccCollections"></div>
+
+        
+
+        </div>
+
+    </main>
+
+    <!-- ==================================
+         IMAGE PREVIEW MODAL
+         HINDI ITO LILIPAT NG PAGE
+    ================================== -->
+
+    <div
+        class="cc-lightbox"
+        id="ccLightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Image preview"
+        aria-hidden="true"
+    >
+
+        <button
+            type="button"
+            class="cc-lightbox-close"
+            id="ccLightboxClose"
+            aria-label="Close image preview"
+        >
+            &times;
+        </button>
+
+        <img
+            class="cc-lightbox-image"
+            id="ccLightboxImage"
+            src=""
+            alt=""
+        >
+
+        <div
+            class="cc-lightbox-caption"
+            id="ccLightboxCaption"
+        ></div>
+
+    </div>
+
+    <!-- EXISTING NAVIGATION SCRIPT -->
+    <script src="../js/scrip.js"></script>
+
+    <script>
+        (() => {
+            "use strict";
+
+            const assetFolder = "../assets/client-collections/";
+
+            const gallery = document.getElementById("ccCollections");
+            const lightbox = document.getElementById("ccLightbox");
+            const previewImage = document.getElementById("ccLightboxImage");
+            const caption = document.getElementById("ccLightboxCaption");
+            const closeButton = document.getElementById("ccLightboxClose");
+
+            let previousFocus = null;
+
+            /*
+             * Filename pattern:
+             * g1_1x1.png ... g15_1x1.png
+             * j1_1x1.png ... j23_1x1.png
+             * m1_1x1.png ... m22_1x1.png
+             */
+
+            const clients = [
+                {
+                    id: "golden-rim",
+                    title: "Golden Rim",
+                    description: "Automotive promotional and marketing designs.",
+                    prefix: "g",
+                    total: 15
+                },
+                {
+                    id: "jj",
+                    title: "Jean & Jianna's",
+                    description: "Restaurant, food, event, and promotional graphics.",
+                    prefix: "j",
+                    total: 23
+                },
+                {
+                    id: "mfc",
+                    title: "Malachi Finance",
+                    description: "Finance, business, and marketing graphics.",
+                    prefix: "m",
+                    total: 22
+                }
+            ];
+
+            // OPEN IMAGE PREVIEW
+            function openLightbox(src, alt, title) {
+                previousFocus = document.activeElement;
+
+                previewImage.src = src;
+                previewImage.alt = alt;
+                caption.textContent = title;
+
+                lightbox.classList.add("open");
+                lightbox.setAttribute("aria-hidden", "false");
+                document.body.classList.add("cc-no-scroll");
+
+                closeButton.focus();
+            }
+
+            // CLOSE IMAGE PREVIEW
+            function closeLightbox() {
+                lightbox.classList.remove("open");
+                lightbox.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("cc-no-scroll");
+
+                previewImage.removeAttribute("src");
+                previewImage.alt = "";
+                caption.textContent = "";
+
+                if (previousFocus && previousFocus.isConnected) {
+                    previousFocus.focus();
+                }
+            }
+
+            // CREATE CLIENT COLLECTIONS
+            clients.forEach(client => {
+                const section = document.createElement("section");
+                section.className = "cc-section";
+                section.dataset.category = client.id;
+
+                const heading = document.createElement("div");
+                heading.className = "cc-section-heading";
+
+                const headingText = document.createElement("div");
+
+                const title = document.createElement("h2");
+                title.textContent = client.title;
+
+                const description = document.createElement("p");
+                description.textContent = client.description;
+
+                headingText.append(title, description);
+
+                const count = document.createElement("span");
+                count.className = "cc-count";
+                count.textContent = client.total + " Designs";
+
+                heading.append(headingText, count);
+
+                const grid = document.createElement("div");
+                grid.className = "cc-gallery";
+
+                for (let i = 1; i <= client.total; i++) {
+                    const filename = client.prefix + i + "_1x1.png";
+                    const imagePath = assetFolder + filename;
+
+                    const card = document.createElement("article");
+                    card.className = "cc-card";
+
+                    /*
+                     * BUTTON INSTEAD OF A LINK.
+                     * Clicking this will never navigate to the image file.
+                     */
+
+                    const imageButton = document.createElement("button");
+                    imageButton.type = "button";
+                    imageButton.className = "cc-image-button";
+                    imageButton.setAttribute(
+                        "aria-label",
+                        "Enlarge " + client.title + " design " + i
+                    );
+
+                    const img = document.createElement("img");
+                    img.src = imagePath;
+                    img.alt = client.title + " Design " + i;
+                    img.loading = "lazy";
+
+                    // Remove missing images from the gallery.
+                    img.addEventListener("error", () => {
+                        card.remove();
+                    });
+
+                    const info = document.createElement("div");
+                    info.className = "cc-card-info";
+
+                    const name = document.createElement("h3");
+                    name.textContent = client.title;
+
+                    const number = document.createElement("span");
+                    number.textContent = "Design " + i;
+
+                    info.append(name, number);
+                    imageButton.append(img);
+                    card.append(imageButton, info);
+
+                    // Clicking opens the modal, NOT a folder or new page.
+                    imageButton.addEventListener("click", () => {
+                        openLightbox(
+                            img.src,
+                            img.alt,
+                            client.title + " — Design " + i
+                        );
+                    });
+
+                    grid.append(card);
+                }
+
+                section.append(heading, grid);
+                gallery.append(section);
+            });
+
+            // FILTER CLIENT COLLECTIONS
+            document.querySelectorAll(".cc-filter").forEach(button => {
+                button.addEventListener("click", () => {
+                    const filter = button.dataset.filter;
+
+                    document.querySelectorAll(".cc-filter").forEach(item => {
+                        item.classList.toggle("active", item === button);
+                    });
+
+                    document.querySelectorAll(".cc-section").forEach(section => {
+                        section.hidden =
+                            filter !== "all" &&
+                            section.dataset.category !== filter;
+                    });
+                });
+            });
+
+            // CLOSE BUTTON
+            closeButton.addEventListener("click", closeLightbox);
+
+            // CLICK OUTSIDE THE IMAGE TO CLOSE
+            lightbox.addEventListener("click", event => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // ESCAPE KEY TO CLOSE
+            document.addEventListener("keydown", event => {
+                if (
+                    event.key === "Escape" &&
+                    lightbox.classList.contains("open")
+                ) {
+                    closeLightbox();
+                }
+            });
+
+        })();
+    </script>
+
+</body>
+</html>
