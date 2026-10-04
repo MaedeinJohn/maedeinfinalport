@@ -1,361 +1,317 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tools | Maedein John P. Cabalo</title>
 
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 
 <body>
 
-
     <!-- SHARED NAVIGATION -->
-
     <div id="navigation"></div>
 
-
     <!-- MAIN CONTENT -->
-
     <main class="main-content">
 
-
         <!-- HERO -->
-
         <section class="hero">
-
             <div class="hero-text">
-
-                <p class="eyebrow">
-                    MY CREATIVE TOOLS
-                </p>
-
-                <h1>
-                    Tools I
-                    <span>Use.</span>
-                </h1>
-
+                <p class="eyebrow">MY CREATIVE TOOLS</p>
+                <h1>Tools I <span>Use.</span></h1>
                 <p class="hero-description">
                     The tools and software I use for graphic design,
                     UI/UX design, social media design, and web development.
                 </p>
+            </div>
 
-                <p class="hero-small">
-                    Creating clean, modern, and meaningful digital experiences.
+        </section>
+
+
+        <!-- FLAGSHIP TOOLS CARD -->
+        <section class="kt-card" id="ktCard">
+
+            <div class="kt-top">
+                <div>
+                    <p class="kt-label">MY STACK</p>
+                    <h2 class="kt-title">Creative<span>.</span>Tools</h2>
+                </div>
+
+                <p class="kt-desc">
+                    The workspace behind my work. Click a tool or just watch:
+                    each one shows how comfortable I am with it, from social
+                    media graphics to UI/UX and front-end code.
                 </p>
 
+                <a href="../page/contact.html" class="kt-btn">
+                    Work with me <span>↗</span>
+                </a>
             </div>
 
+            <div class="kt-browser">
 
-            <a
-                href="../page/contact.html"
-                class="contact-button"
-            >
-                Work with me
-                <span>→</span>
-            </a>
+                <div class="kt-bar-top">
+                    <i class="kt-dot r"></i><i class="kt-dot y"></i><i class="kt-dot g"></i>
+                    <div class="kt-url">maedein<b>/tools</b></div>
+                </div>
 
+                <div class="kt-app">
+
+                    <!-- SIDEBAR (filled by JS) -->
+                    <aside class="kt-side">
+                        <div class="kt-brand"><i>M</i>Maedein<em>Tools</em></div>
+
+                        <div class="kt-clock">
+                            <div><b id="ktTime">--:--</b><span>Manila GMT+8</span></div>
+                        </div>
+
+                        <div id="ktNav"></div>
+                    </aside>
+
+                    <!-- MAIN PANEL -->
+                    <div class="kt-main">
+
+                        <div class="kt-head">
+                            <div>
+                                <p class="kt-hello">Skill overview</p>
+                                <h3 class="kt-tool-name" id="ktName">Canva</h3>
+                                <p class="kt-tool-desc" id="ktDesc"></p>
+                            </div>
+                            <span class="kt-pill">5 tools active</span>
+                        </div>
+
+                        <div class="kt-stats">
+                            <div class="kt-stat">
+                                <small>PROFICIENCY</small>
+                                <b><span id="ktScore">0</span><i>%</i></b>
+                            </div>
+                            <div class="kt-stat">
+                                <small>AVERAGE</small>
+                                <b><span id="ktAvg">0</span><i>%</i></b>
+                            </div>
+                            <div class="kt-stat">
+                                <small>TOOLS</small>
+                                <b>5</b>
+                            </div>
+                        </div>
+
+                        <div class="kt-chart-box">
+                            <div class="kt-chart-title">
+                                Tool proficiency <span>2026</span>
+                            </div>
+
+                            <svg class="kt-svg" id="ktSvg" viewBox="0 0 600 250"
+                                 role="img" aria-label="Tool proficiency chart"></svg>
+
+                            <div class="kt-axis" id="ktAxis"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
 
 
-        <!-- TOOLS STRIP -->
-
-        <section class="tools-strip">
-
-            <div class="tools-title">
-
-                <small>
-                    MY STACK
-                </small>
-
-                <strong>
-                    Creative Tools
-                </strong>
-
-            </div>
-
-
-            <div class="tool-list">
-
-
-                <div class="tool">
-
-                    <span>
-                        F
-                    </span>
-
-                    Figma
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>
-                        C
-                    </span>
-
-                    Canva
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>
-                        P
-                    </span>
-
-                    Photoshop
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>
-                        A
-                    </span>
-
-                    Illustrator
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>
-                        H
-                    </span>
-
-                    HTML / CSS
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- DASHBOARD -->
-
-        <section class="dashboard-grid">
-
-
-            <!-- FIGMA -->
-
-            <a
-                href="#"
-                class="dashboard-card projects-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        F
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            Figma
-                        </h2>
-
-                        <p>
-                            UI/UX design, website layouts,
-                            prototypes, and digital interfaces.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card-bottom">
-                    Design & Prototype →
-                </div>
-
-            </a>
-
-
-            <!-- CANVA -->
-
-            <a
-                href="#"
-                class="dashboard-card about-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        C
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            Canva
-                        </h2>
-
-                        <p>
-                            Social media graphics, presentations,
-                            marketing materials, and layouts.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card-bottom">
-                    Creative Design →
-                </div>
-
-            </a>
-
-
-            <!-- PHOTOSHOP -->
-
-            <a
-                href="#"
-                class="dashboard-card tools-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        P
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            Photoshop
-                        </h2>
-
-                        <p>
-                            Photo editing, image manipulation,
-                            retouching, and visual compositions.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card-bottom">
-                    Photo Editing →
-                </div>
-
-            </a>
-
-
-            <!-- ILLUSTRATOR -->
-
-            <a
-                href="#"
-                class="dashboard-card skills-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        Ai
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            Illustrator
-                        </h2>
-
-                        <p>
-                            Vector graphics, logos, branding,
-                            icons, and illustrations.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card-bottom">
-                    Vector Design →
-                </div>
-
-            </a>
-
-
-            <!-- VS CODE -->
-
-            <a
-                href="#"
-                class="dashboard-card services-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        VS
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            VS Code
-                        </h2>
-
-                        <p>
-                            HTML, CSS, JavaScript, and
-                            front-end web development.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card-bottom">
-                    Web Development →
-                </div>
-
-            </a>
-
-
-        </section>
-
+        <!-- DASHBOARD (your original cards) -->
+       
 
         <!-- FOOTER -->
-
         <footer>
-
-            © 2026 Maedein John P. Cabalo.
-            All rights reserved.
-
+            © 2026 Maedein John P. Cabalo. All rights reserved.
         </footer>
-
 
     </main>
 
 
+    <!-- SHOWCASE SCRIPT -->
+    <script>
+    (function () {
+
+        /* ===== EDIT YOUR TOOLS HERE =====
+           file  = image file name WITHOUT extension (in assets/TOOLS LOGO)
+           value = proficiency 0-100 (placeholder numbers, change them!) */
+        var FOLDER = "../assets/TOOLS%20LOGO/";
+        var EXTS   = ["png", "jpg", "jpeg", "webp", "svg"];
+
+        var tools = [
+            { name: "Canva",      file: "CANVA", value: 80, desc: "Social media graphics, presentations, marketing materials, and layouts." },
+            { name: "CSS",        file: "CSS",   value: 80, desc: "Responsive layouts, animations, and clean modern styling." },
+            { name: "Figma",      file: "FIGMA", value: 90, desc: "UI/UX design, website layouts, prototypes, and digital interfaces." },
+            { name: "HTML",       file: "HTML",  value: 85, desc: "Semantic, accessible structure for every page I build." },
+            { name: "Photoshop",  file: "PS",    value: 80, desc: "Photo editing, retouching, and visual compositions." }
+        ];
+
+        var card  = document.getElementById("ktCard");
+        var svg   = document.getElementById("ktSvg");
+        var nav   = document.getElementById("ktNav");
+        var axis  = document.getElementById("ktAxis");
+        var nameE = document.getElementById("ktName");
+        var descE = document.getElementById("ktDesc");
+        var scoreE = document.getElementById("ktScore");
+        var avgE  = document.getElementById("ktAvg");
+        var timeE = document.getElementById("ktTime");
+
+        /* tries png, jpg, webp... until the image loads */
+        function loadImg(img, base) {
+            var n = 0;
+            img.onerror = function () {
+                n++;
+                if (n < EXTS.length) img.src = FOLDER + base + "." + EXTS[n];
+            };
+            img.src = FOLDER + base + "." + EXTS[0];
+        }
+
+        function el(tag, cls) {
+            var e = document.createElement(tag);
+            if (cls) e.className = cls;
+            return e;
+        }
+
+        /* ----- sidebar + logo axis ----- */
+        var navBtns = [], axBtns = [];
+
+        tools.forEach(function (t, i) {
+            var b = el("button", "kt-nav");
+            var im = el("img"); im.alt = t.name; loadImg(im, t.file);
+            b.appendChild(im);
+            b.appendChild(document.createTextNode(t.name));
+            var em = el("em"); em.textContent = t.value + "%";
+            b.appendChild(em);
+            b.onclick = function () { select(i, true); };
+            nav.appendChild(b); navBtns.push(b);
+
+            var a = el("button", "kt-ax");
+            a.style.setProperty("--i", i);
+            var im2 = el("img"); im2.alt = t.name; loadImg(im2, t.file);
+            a.appendChild(im2);
+            a.appendChild(document.createTextNode(t.name));
+            a.onclick = function () { select(i, true); };
+            axis.appendChild(a); axBtns.push(a);
+        });
+
+        /* ----- SVG chart ----- */
+        var NS = "http://www.w3.org/2000/svg";
+        var BASE = 220, MAXH = 190, COL = 600 / tools.length;
+
+        var s = '<defs>' +
+            '<linearGradient id="ktBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa0f5"/><stop offset="1" stop-color="#3678df"/></linearGradient>' +
+            '<linearGradient id="ktOrange" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a52"/><stop offset="1" stop-color="#ff6b16"/></linearGradient>' +
+            '<linearGradient id="ktArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3678df" stop-opacity=".25"/><stop offset="1" stop-color="#3678df" stop-opacity="0"/></linearGradient>' +
+            '</defs>';
+
+        s += '<g class="kt-grid">';
+        [0, 25, 50, 75, 100].forEach(function (p) {
+            var y = BASE - MAXH * p / 100;
+            s += '<line x1="0" x2="600" y1="' + y + '" y2="' + y + '"/>';
+        });
+        s += '</g>';
+
+        var pts = [];
+        tools.forEach(function (t, i) {
+            var cx = COL * i + COL / 2;
+            var h  = MAXH * t.value / 100;
+            pts.push([cx, BASE - h]);
+            s += '<rect class="kt-bar" style="--i:' + i + '" x="' + (cx - 28) + '" y="' + (BASE - h) +
+                 '" width="56" height="' + h + '" rx="12"/>';
+        });
+
+        var line = "M" + pts.map(function (p) { return p[0] + " " + (p[1] - 14); }).join(" L");
+        var area = line + " L" + pts[pts.length - 1][0] + " " + BASE + " L" + pts[0][0] + " " + BASE + " Z";
+
+        s += '<path class="kt-area" d="' + area + '"/>';
+        s += '<path class="kt-line" pathLength="1" d="' + line + '"/>';
+
+        tools.forEach(function (t, i) {
+            s += '<circle class="kt-pt" style="--i:' + i + '" cx="' + pts[i][0] + '" cy="' + (pts[i][1] - 14) + '" r="6"/>';
+            s += '<text class="kt-val" style="--i:' + i + '" x="' + pts[i][0] + '" y="' + (pts[i][1] - 28) + '">' + t.value + '%</text>';
+        });
+
+        svg.innerHTML = s;
+
+        var bars = svg.querySelectorAll(".kt-bar");
+        var dots = svg.querySelectorAll(".kt-pt");
+
+        /* hover on a bar selects it */
+        bars.forEach(function (b, i) {
+            b.style.cursor = "pointer";
+            b.addEventListener("mouseenter", function () { select(i, true); });
+        });
+
+        /* ----- number count-up ----- */
+        function countTo(node, to) {
+            var from = parseInt(node.textContent, 10) || 0;
+            var start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / 600, 1);
+                node.textContent = Math.round(from + (to - from) * p);
+                if (p < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        /* ----- select a tool ----- */
+        var current = 0, timer = null;
+
+        function select(i, manual) {
+            current = i;
+            tools.forEach(function (t, k) {
+                var on = k === i;
+                navBtns[k].classList.toggle("on", on);
+                axBtns[k].classList.toggle("on", on);
+                bars[k].classList.toggle("on", on);
+                dots[k].classList.toggle("on", on);
+            });
+            nameE.textContent = tools[i].name;
+            descE.textContent = tools[i].desc;
+            countTo(scoreE, tools[i].value);
+            if (manual) restart();
+        }
+
+        function restart() {
+            clearInterval(timer);
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            timer = setInterval(function () {
+                select((current + 1) % tools.length, false);
+            }, 2800);
+        }
+
+        /* ----- average, clock ----- */
+        var avg = Math.round(tools.reduce(function (a, t) { return a + t.value; }, 0) / tools.length);
+
+        function tick() {
+            timeE.textContent = new Date().toLocaleTimeString("en-PH",
+                { hour: "numeric", minute: "2-digit", timeZone: "Asia/Manila" });
+        }
+        tick(); setInterval(tick, 20000);
+
+        select(0, false);
+
+        /* ----- start animations when the card scrolls into view ----- */
+        var started = false;
+        function start() {
+            if (started) return;
+            started = true;
+            card.classList.add("kt-go");
+            countTo(avgE, avg);
+            restart();
+        }
+
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(function (e, o) {
+                if (e[0].isIntersecting) { start(); o.disconnect(); }
+            }, { threshold: 0.25 }).observe(card);
+        } else {
+            start();
+        }
+
+    })();
+    </script>
+
     <script src="../js/scrip.js"></script>
 
 </body>
-
 </html>
-```

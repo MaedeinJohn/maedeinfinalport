@@ -2,420 +2,238 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Maedein John P. Cabalo | Portfolio
-    </title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maedein John P. Cabalo | Portfolio</title>
 
     <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-
 
 <body>
 
-
-    <!-- =================================================
-         PORTFOLIO LOADING SCREEN
-    ================================================== -->
-
+    <!-- LOADING SCREEN -->
     <div id="loading-screen">
-
         <div class="loading-content">
-
-            <img
-                src="../assets/MDN.png"
-                alt="Maedein Logo"
-                class="loading-logo"
-            >
-
+            <img src="../assets/MDN.png" alt="Maedein Logo" class="loading-logo">
             <div class="loading-line"></div>
-
         </div>
-
     </div>
 
-
-
-    <!-- =================================================
-         SHARED NAVIGATION
-
-         Dito ilalagay ng JavaScript ang
-         components/navigation.html
-    ================================================== -->
-
+    <!-- SHARED NAVIGATION (filled in by JavaScript) -->
     <div id="navigation"></div>
 
-
-
-    <!-- =================================================
-         MAIN CONTENT
-    ================================================== -->
-
+    <!-- MAIN CONTENT -->
     <main class="main-content">
 
-
-        <!-- =========================
-             HERO / HOME
-        ========================== -->
-
+        <!-- HERO / HOME -->
         <section class="hero">
-
             <div class="hero-text">
-
-                <p class="eyebrow">
-                    WELCOME TO MY PORTFOLIO
-                </p>
-
+                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
 
                 <h1>
                     Hello, I am
                     <span>Maedein John</span>
                 </h1>
 
-
                 <p class="hero-description">
-
                     Social Media Designer
                     • UI/UX Designer
                     • Graphic Designer
                     • Front-End Developer
-
                 </p>
-
 
                 <p class="hero-small">
-
                     Designing simple, modern,
                     and user-centered digital experiences.
-
                 </p>
-
             </div>
 
-
-            <a
-                href="../page/contact.html"
-                class="contact-button"
-            >
-
+            <a href="../page/contact.html" class="contact-button">
                 Get in touch
-
                 <span>→</span>
-
             </a>
-
         </section>
 
 
+        <!-- DAILY DRIVERS (sliding tools) -->
+        <section class="dd-strip">
 
-        <!-- =========================
-             TOOLS
-        ========================== -->
-
-        <section class="tools-strip">
-
-
-            <div class="tools-title">
-
-                <small>
-                    MY STACK
-                </small>
-
-                <strong>
-                    Tools I Use
-                </strong>
-
+            <div class="dd-title">
+                <small>DAILY DRIVERS</small>
+                <strong>Tools I work with</strong>
             </div>
 
+            <div class="dd-window">
+                <div class="dd-track">
 
-            <div class="tool-list">
+                    <!-- SET 1 -->
+                    <div class="dd-group">
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="Canva">Canva</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/PS.png" alt="Photoshop">Photoshop</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="Figma">Figma</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="CSS">CSS</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="HTML">HTML</div>
+                    </div>
 
-
-                <div class="tool">
-
-                    <span>F</span>
-
-                    Figma
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>C</span>
-
-                    Canva
-
-                </div>
-
-
-                <div class="tool">
-
-                    <span>P</span>
-
-                    Photoshop
+                    <!-- SET 2 (duplicate for a seamless loop) -->
+                    <div class="dd-group" aria-hidden="true">
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="">Canva</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/PS.png" alt="">Photoshop</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="">Figma</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="">CSS</div>
+                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="">HTML</div>
+                    </div>
 
                 </div>
-
-
-                <div class="tool">
-
-                    <span>H</span>
-
-                    HTML / CSS
-
-                </div>
-
-
             </div>
 
         </section>
 
 
-
-        <!-- =========================
-             HOME CARDS
-        ========================== -->
-
+        <!-- HOME CARDS -->
         <section class="dashboard-grid">
 
-
-            <!-- PROJECTS -->
-
-            <a
-                href="../page/projects.html"
-                class="dashboard-card projects-card"
-            >
-
-                <div class="card-heading">
-
-                    <div class="card-icon">
-                        □
+            <!-- PROJECTS (images scroll up, 3 at a time) -->
+            <a href="../page/projects.html" class="dashboard-card projects-card">
+                <div class="hc-split">
+                    <div class="hc-left">
+                        <div class="card-heading">
+                            <div class="card-icon">□</div>
+                            <div>
+                                <h2>Projects</h2>
+                                <p>Explore my creative, design, and development projects.</p>
+                            </div>
+                        </div>
+                        <div class="card-bottom">View Projects →</div>
                     </div>
 
-
-                    <div>
-
-                        <h2>
-                            Projects
-                        </h2>
-
-                        <p>
-                            Explore my creative,
-                            design, and development projects.
-                        </p>
-
+                    <div class="hc-scroll">
+                        <div class="hc-cols">
+                            <div class="hc-col"></div>
+                            <div class="hc-col"></div>
+                            <div class="hc-col"></div>
+                        </div>
                     </div>
-
                 </div>
-
-
-                <div class="card-bottom">
-
-                    View Projects →
-
-                </div>
-
             </a>
 
-
-
-            <!-- ABOUT -->
-
-            <a
-                href="../page/about.html"
-                class="dashboard-card about-card"
-            >
-
+            <!-- ABOUT (your photo) -->
+            <a href="../page/about.html" class="dashboard-card about-card">
                 <div class="card-heading">
-
-                    <div class="card-icon">
-                        ♙
-                    </div>
-
-
+                    <div class="card-icon">♙</div>
                     <div>
-
-                        <h2>
-                            About
-                        </h2>
-
-                        <p>
-                            Learn more about my background
-                            and creative approach.
-                        </p>
-
+                        <h2>About</h2>
+                        <p>Learn more about my background and creative approach.</p>
                     </div>
-
                 </div>
-
-
-                <div class="card-bottom">
-
-                    About Me →
-
-                </div>
-
+                <img class="hc-about-img" src="../assets/about.jpg" alt="Maedein John">
+                <div class="card-bottom">About Me →</div>
             </a>
-
-
 
             <!-- TOOLS -->
-
-            <a
-                href="../page/tools.html"
-                class="dashboard-card tools-card"
-            >
-
+            <a href="../page/tools.html" class="dashboard-card tools-card">
                 <div class="card-heading">
-
-                    <div class="card-icon">
-                        ✦
-                    </div>
-
-
+                    <div class="card-icon">✦</div>
                     <div>
-
-                        <h2>
-                            Tools
-                        </h2>
-
-                        <p>
-                            Software and tools I use
-                            for my creative work.
-                        </p>
-
+                        <h2>Tools</h2>
+                        <p>Software and tools I use for my creative work.</p>
                     </div>
-
                 </div>
-
-
-                <div class="card-bottom">
-
-                    View Tools →
-
+                <div class="hc-tools">
+                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="">Figma</div>
+                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="">CSS</div>
+                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="">HTML</div>
+                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/PS.png" alt="">Photoshop</div>
+                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="">Canva</div>
                 </div>
-
+                <div class="card-bottom">View Tools →</div>
             </a>
 
-
-
-            <!-- SKILLS -->
-
-            <a
-                href="../page/skills.html"
-                class="dashboard-card skills-card"
-            >
-
+            <!-- SKILLS (graph) -->
+            <a href="../page/skills.html" class="dashboard-card skills-card">
                 <div class="card-heading">
-
-                    <div class="card-icon">
-                        ☆
-                    </div>
-
-
+                    <div class="card-icon">☆</div>
                     <div>
-
-                        <h2>
-                            Skills
-                        </h2>
-
-                        <p>
-                            My design, development,
-                            and technical skills.
-                        </p>
-
+                        <h2>Skills</h2>
+                        <p>What I'm skilled in.</p>
                     </div>
-
                 </div>
-
-
-                <div class="card-bottom">
-
-                    View Skills →
-
+                <div class="hc-skills">
+                    <div class="hc-skill" style="--w:95%"><span>Social Media</span><div class="hc-bar"><i></i></div><b>95%</b></div>
+                    <div class="hc-skill" style="--w:90%"><span>Logo Design</span><div class="hc-bar"><i></i></div><b>90%</b></div>
+                    <div class="hc-skill" style="--w:85%"><span>UI/UX</span><div class="hc-bar"><i></i></div><b>85%</b></div>
+                    <div class="hc-skill" style="--w:80%"><span>Graphic Design</span><div class="hc-bar"><i></i></div><b>80%</b></div>
+                    <div class="hc-skill" style="--w:75%"><span>Web Design</span><div class="hc-bar"><i></i></div><b>75%</b></div>
                 </div>
-
+                <div class="card-bottom">View Skills →</div>
             </a>
-
-
 
             <!-- SERVICES -->
-
-            <a
-                href="../page/services.html"
-                class="dashboard-card services-card"
-            >
-
+            <a href="../page/services.html" class="dashboard-card services-card">
                 <div class="card-heading">
-
-                    <div class="card-icon">
-                        ◇
-                    </div>
-
-
+                    <div class="card-icon">◇</div>
                     <div>
-
-                        <h2>
-                            Services
-                        </h2>
-
-                        <p>
-                            Creative and digital services
-                            I can provide.
-                        </p>
-
+                        <h2>Services</h2>
+                        <p>What I can offer you.</p>
                     </div>
-
                 </div>
-
-
-                <div class="card-bottom">
-
-                    View Services →
-
-                </div>
-
+                <ul class="service-list hc-services">
+                    <li><span>◇</span> Social Media Design <em>01</em></li>
+                    <li><span>◇</span> UI/UX Design <em>02</em></li>
+                    <li><span>◇</span> Graphic Design <em>03</em></li>
+                    <li><span>◇</span> Brand Identity <em>04</em></li>
+                    <li><span>◇</span> Front-End Development <em>05</em></li>
+                </ul>
+                <div class="card-bottom">View Services →</div>
             </a>
-
 
         </section>
 
-
-
         <!-- FOOTER -->
-
         <footer>
-
-            © 2026 Maedein John P. Cabalo.
-            All rights reserved.
-
+            © 2026 Maedein John P. Cabalo. All rights reserved.
         </footer>
-
 
     </main>
 
-
-
-    <!-- =================================================
-         JAVASCRIPT
-    ================================================== -->
-
+    <!-- JAVASCRIPT -->
     <script src="../js/scrip.js"></script>
 
+
+    <!-- PROJECT IMAGES: builds the 3 scrolling columns -->
+    <script>
+        const BASE = "../assets/client-collections/";
+        const EXTS = ["png", "jpg", "jpeg", "webp"];   // tries each until one loads
+        const range = (p, n) => Array.from({ length: n }, (_, i) => p + (i + 1) + "_1x1");
+
+        const columns = [
+            range("g", 15),   // g1_1x1 ... g15_1x1
+            range("j", 23),   // j1_1x1 ... j23_1x1
+            range("m", 22)    // m1_1x1 ... m22_1x1
+        ];
+
+        function makeImg(name) {
+            const img = new Image();
+            let i = 0;
+            img.alt = "";
+            img.onerror = () => {
+                if (++i < EXTS.length) img.src = BASE + name + "." + EXTS[i];
+                else img.remove();
+            };
+            img.src = BASE + name + "." + EXTS[0];
+            return img;
+        }
+
+        document.querySelectorAll(".hc-col").forEach((col, c) => {
+            const names = columns[c];
+            const track = document.createElement("div");
+            track.className = "hc-track";
+            track.style.animationDuration = names.length * 2.8 + "s";   // bigger = slower
+            for (let r = 0; r < 2; r++) names.forEach(n => track.appendChild(makeImg(n)));
+            col.appendChild(track);
+        });
+    </script>
 
 </body>
 
