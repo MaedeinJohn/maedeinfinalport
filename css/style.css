@@ -2070,3 +2070,1168 @@ body {
     }
 
 }
+/* =========================================================
+   ABOUT MODERN PAGE
+   NEW ABOUT DESIGN
+   DOES NOT CHANGE OTHER PAGES
+========================================================= */
+
+.about-modern-page {
+    position: relative;
+}
+
+
+/* =========================================================
+   ABOUT INTRO
+========================================================= */
+
+.about-modern-intro {
+    position: relative;
+
+    padding: 0 0 28px;
+
+    z-index: 2;
+}
+
+.about-modern-intro-text {
+    max-width: 1000px;
+}
+
+.about-modern-eyebrow {
+    margin-bottom: 12px;
+
+    color: #ff6b16;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.about-modern-intro h1 {
+    margin: 0 0 12px;
+
+    color: #102b52;
+
+    font-size: clamp(46px, 5vw, 68px);
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.about-modern-subtitle {
+    max-width: 760px;
+
+    color: #61718a;
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN ABOUT CARD
+========================================================= */
+
+.about-modern-card {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 620px;
+
+    padding: 42px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.2fr) minmax(350px, 0.8fr);
+
+    gap: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid #d4dbe8;
+
+    border-radius: 34px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(119, 163, 255, 0.24),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 255, 255, 0.9),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7faff 45%,
+            #dce9ff 100%
+        );
+
+    box-shadow:
+        0 25px 60px rgba(16, 43, 82, 0.08);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BACKGROUND CIRCLES
+========================================================= */
+
+.about-modern-circle {
+    position: absolute;
+
+    border: 1px solid rgba(82, 108, 143, 0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 580px;
+    height: 580px;
+
+    left: -290px;
+    top: 110px;
+}
+
+.circle-two {
+    width: 420px;
+    height: 420px;
+
+    right: -150px;
+    top: -210px;
+}
+
+.circle-three {
+    width: 260px;
+    height: 260px;
+
+    right: 130px;
+    bottom: -150px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.about-modern-content {
+    position: relative;
+
+    z-index: 5;
+
+    min-width: 0;
+}
+
+.about-modern-content h2 {
+    max-width: 570px;
+
+    margin: 0 0 18px;
+
+    color: #102b52;
+
+    font-size: clamp(32px, 3vw, 45px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+}
+
+.about-modern-content h2 span {
+    color: #61708a;
+}
+
+
+.about-modern-description {
+    max-width: 590px;
+
+    margin-bottom: 10px;
+
+    color: #61708a;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+.about-modern-description strong {
+    color: #102b52;
+}
+
+
+/* =========================================================
+   ROLE ROWS
+========================================================= */
+
+.about-modern-roles {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 25px;
+
+    border-top: 1px solid rgba(91, 110, 137, 0.2);
+}
+
+
+.about-modern-role {
+    min-height: 62px;
+
+    display: grid;
+
+    grid-template-columns: 190px 1fr 35px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid rgba(91, 110, 137, 0.2);
+}
+
+
+.about-modern-role-icons {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.role-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    border: 1px solid #cdd5e1;
+
+    box-shadow:
+        0 4px 12px rgba(16, 43, 82, 0.08);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+}
+
+
+.role-icon.orange {
+    color: #ff6b16;
+}
+
+
+.role-icon.blue {
+    color: #3678df;
+}
+
+
+.role-icon.purple {
+    color: #805ad5;
+}
+
+
+.role-icon.dark {
+    color: #102b52;
+}
+
+
+.about-modern-role-name {
+    color: #102b52;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.about-modern-role-number {
+    color: #a5b0c0;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.about-modern-info {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid #c9d1dc;
+
+    border-radius: 19px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 8px 25px rgba(16, 43, 82, 0.05);
+}
+
+
+.about-modern-info-item {
+    min-height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 16px;
+
+    border-bottom: 1px solid #dce1e8;
+}
+
+
+.about-modern-info-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #ff6b16;
+
+    background: #fff1e8;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+
+.about-modern-info-icon.location {
+    color: #ff6b16;
+}
+
+
+.about-modern-info-item strong,
+.about-modern-info-bottom strong {
+    display: block;
+
+    color: #102b52;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.about-modern-info-item small,
+.about-modern-info-bottom small {
+    display: block;
+
+    color: #718097;
+
+    font-size: 11px;
+
+    letter-spacing: 0.4px;
+}
+
+
+.about-modern-info-bottom {
+    min-height: 65px;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.about-modern-info-bottom > span {
+    color: #9aa6b6;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.about-modern-visual {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.about-modern-image-glow {
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(180, 207, 255, 0.55) 50%,
+            transparent 72%
+        );
+
+    filter: blur(2px);
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.about-modern-image-frame {
+    position: relative;
+
+    width: 330px;
+    height: 410px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    border-radius: 165px 165px 35px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    background:
+        linear-gradient(
+            180deg,
+            #edf4ff 0%,
+            #cbdcff 100%
+        );
+
+    box-shadow:
+        0 25px 50px rgba(50, 84, 130, 0.15);
+
+    z-index: 4;
+}
+
+
+.about-modern-image-frame::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    top: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+.about-modern-image-frame img {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   ORBIT LINES
+========================================================= */
+
+.about-modern-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(82, 108, 143, 0.22);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.orbit-one {
+    width: 460px;
+    height: 260px;
+
+    transform: rotate(-22deg);
+
+    z-index: 2;
+}
+
+
+.orbit-two {
+    width: 500px;
+    height: 330px;
+
+    transform: rotate(18deg);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
+
+.about-modern-floating-card {
+    position: absolute;
+
+    right: 15px;
+    bottom: 80px;
+
+    min-width: 190px;
+
+    padding: 13px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid #d2dae5;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+        0 12px 30px rgba(16, 43, 82, 0.12);
+
+    z-index: 8;
+}
+
+
+.floating-dot {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #25b56f;
+
+    box-shadow:
+        0 0 0 5px rgba(37, 181, 111, 0.12);
+}
+
+
+.about-modern-floating-card strong {
+    display: block;
+
+    color: #102b52;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.about-modern-floating-card small {
+    color: #718097;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   BIG M
+========================================================= */
+
+.about-modern-initials {
+    position: absolute;
+
+    right: 30px;
+    top: 25px;
+
+    color: rgba(16, 43, 82, 0.08);
+
+    font-size: 150px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-modern-cta {
+    margin-top: 18px;
+
+    padding: 24px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-radius: 23px;
+
+    background: #102b52;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 35px rgba(16, 43, 82, 0.12);
+}
+
+
+.about-modern-cta p {
+    margin-bottom: 5px;
+
+    color: #ff7118;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.about-modern-cta h2 {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+
+.about-modern-cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #102b52;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+
+.about-modern-cta-button span {
+    color: #ff6b16;
+
+    font-size: 17px;
+}
+
+
+.about-modern-cta-button:hover {
+    background: #ff6b16;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+.about-modern-cta-button:hover span {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark .about-modern-intro h1 {
+    color: #ffffff;
+}
+
+
+body.dark .about-modern-subtitle {
+    color: #aeb9ca;
+}
+
+
+body.dark .about-modern-card {
+    border-color: #303b4d;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(69, 111, 190, 0.28),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #182131 0%,
+            #202c40 100%
+        );
+}
+
+
+body.dark .about-modern-content h2 {
+    color: #ffffff;
+}
+
+
+body.dark .about-modern-content h2 span {
+    color: #aeb9ca;
+}
+
+
+body.dark .about-modern-description {
+    color: #aeb9ca;
+}
+
+
+body.dark .about-modern-description strong,
+body.dark .about-modern-role-name,
+body.dark .about-modern-info-item strong,
+body.dark .about-modern-info-bottom strong,
+body.dark .about-modern-floating-card strong {
+    color: #ffffff;
+}
+
+
+body.dark .about-modern-role {
+    border-color: #344155;
+}
+
+
+body.dark .about-modern-role-number {
+    color: #7e8ca2;
+}
+
+
+body.dark .role-icon {
+    background: #202938;
+
+    border-color: #3a4659;
+}
+
+
+body.dark .about-modern-info {
+    background: rgba(24, 33, 49, 0.9);
+
+    border-color: #3a4659;
+}
+
+
+body.dark .about-modern-info-item {
+    border-color: #344155;
+}
+
+
+body.dark .about-modern-info-item small,
+body.dark .about-modern-info-bottom small,
+body.dark .about-modern-floating-card small {
+    color: #9aa8bb;
+}
+
+
+body.dark .about-modern-floating-card {
+    background: #182131;
+
+    border-color: #3a4659;
+}
+
+
+body.dark .about-modern-image-frame {
+    background:
+        linear-gradient(
+            180deg,
+            #26364f 0%,
+            #172235 100%
+        );
+}
+
+
+/* =========================================================
+   ABOUT TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .about-modern-card {
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+
+        padding: 32px;
+
+        min-height: 580px;
+    }
+
+    .about-modern-image-frame {
+        width: 280px;
+        height: 370px;
+    }
+
+    .about-modern-image-glow {
+        width: 320px;
+        height: 320px;
+    }
+
+    .about-modern-floating-card {
+        right: 0;
+    }
+
+}
+
+
+/* =========================================================
+   ABOUT SMALL TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-modern-card {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 30px;
+
+        gap: 10px;
+    }
+
+
+    .about-modern-content {
+        order: 1;
+    }
+
+
+    .about-modern-visual {
+        order: 2;
+
+        min-height: 430px;
+
+        margin-top: 10px;
+    }
+
+
+    .about-modern-image-frame {
+        width: 270px;
+        height: 350px;
+    }
+
+
+    .about-modern-image-glow {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    .about-modern-floating-card {
+        right: 5%;
+        bottom: 50px;
+    }
+
+
+    .about-modern-role {
+        grid-template-columns: 120px 1fr 30px;
+    }
+
+
+    .about-modern-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .about-modern-cta-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   ABOUT MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-modern-intro {
+        padding-bottom: 22px;
+    }
+
+
+    .about-modern-eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .about-modern-intro h1 {
+        font-size: clamp(40px, 12vw, 52px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .about-modern-subtitle {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    .about-modern-card {
+        padding: 22px;
+
+        border-radius: 25px;
+    }
+
+
+    .about-modern-content h2 {
+        font-size: 30px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .about-modern-description {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .about-modern-role {
+        grid-template-columns: 48px 1fr 25px;
+
+        min-height: 58px;
+    }
+
+
+    .role-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .about-modern-role-name {
+        font-size: 12px;
+    }
+
+
+    .about-modern-role-number {
+        font-size: 10px;
+    }
+
+
+    .about-modern-info {
+        border-radius: 16px;
+    }
+
+
+    .about-modern-info-item {
+        padding: 11px;
+
+        gap: 10px;
+    }
+
+
+    .about-modern-info-item strong,
+    .about-modern-info-bottom strong {
+        font-size: 12px;
+    }
+
+
+    .about-modern-info-item small,
+    .about-modern-info-bottom small {
+        font-size: 10px;
+    }
+
+
+    .about-modern-visual {
+        min-height: 390px;
+    }
+
+
+    .about-modern-image-frame {
+        width: 230px;
+        height: 300px;
+
+        border-radius: 115px 115px 25px 25px;
+    }
+
+
+    .about-modern-image-glow {
+        width: 270px;
+        height: 270px;
+    }
+
+
+    .orbit-one {
+        width: 330px;
+        height: 190px;
+    }
+
+
+    .orbit-two {
+        width: 360px;
+        height: 240px;
+    }
+
+
+    .about-modern-floating-card {
+        right: 0;
+
+        bottom: 25px;
+
+        min-width: 165px;
+
+        padding: 10px 12px;
+    }
+
+
+    .about-modern-initials {
+        right: 5px;
+
+        top: 15px;
+
+        font-size: 100px;
+    }
+
+
+    .about-modern-cta {
+        padding: 21px;
+
+        border-radius: 19px;
+    }
+
+
+    .about-modern-cta h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-modern-card {
+        padding: 18px;
+    }
+
+
+    .about-modern-content h2 {
+        font-size: 27px;
+    }
+
+
+    .about-modern-role {
+        grid-template-columns: 42px 1fr 22px;
+    }
+
+
+    .role-icon {
+        width: 34px;
+        height: 34px;
+
+        font-size: 9px;
+    }
+
+
+    .about-modern-role-name {
+        font-size: 11px;
+    }
+
+
+    .about-modern-image-frame {
+        width: 205px;
+        height: 275px;
+    }
+
+
+    .about-modern-image-glow {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .about-modern-floating-card {
+        min-width: 150px;
+    }
+
+}
