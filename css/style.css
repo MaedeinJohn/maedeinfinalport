@@ -597,7 +597,7 @@ html, body { height: auto !important; min-height: 100% !important; overflow-x: h
 /* MAIN ABOUT CARD */
 .about-modern-card {
     position: relative; width: 100%; min-height: 620px; padding: 42px;
-    display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(350px, 0.8fr); gap: 30px;
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(410px, 0.9fr); gap: 30px;
     overflow: hidden; border: 1px solid #d4dbe8; border-radius: 34px;
     background:
         radial-gradient(circle at 85% 20%, rgba(119, 163, 255, 0.24), transparent 34%),
@@ -666,23 +666,23 @@ html, body { height: auto !important; min-height: 100% !important; overflow-x: h
 .about-modern-info-bottom > span { color: #9aa6b6; font-size: 22px; }
 
 /* RIGHT VISUAL */
-.about-modern-visual { position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; z-index: 3; }
+.about-modern-visual { position: relative; min-height: 580px; display: flex; align-items: center; justify-content: center; z-index: 3; }
 
 .about-modern-image-glow {
-    position: absolute; width: 370px; height: 370px; border-radius: 50%;
+    position: absolute; width: 440px; height: 440px; border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(180, 207, 255, 0.55) 50%, transparent 72%);
     filter: blur(2px);
 }
 
 .about-modern-image-frame {
-    position: relative; width: 330px; height: 410px; overflow: hidden;
+    position: relative; width: 390px; height: 490px; overflow: hidden;
     display: flex; align-items: flex-end; justify-content: center;
-    border-radius: 165px 165px 35px 35px; border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 195px 195px 35px 35px; border: 1px solid rgba(255, 255, 255, 0.8);
     background: linear-gradient(180deg, #edf4ff 0%, #cbdcff 100%);
     box-shadow: 0 25px 50px rgba(50, 84, 130, 0.15); z-index: 4;
 }
 
-.about-modern-image-frame::before { content: ""; position: absolute; width: 250px; height: 250px; top: 45px; border-radius: 50%; background: rgba(255, 255, 255, 0.7); }
+.about-modern-image-frame::before { content: ""; position: absolute; width: 290px; height: 290px; top: 45px; border-radius: 50%; background: rgba(255, 255, 255, 0.7); }
 .about-modern-image-frame img { position: relative; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; z-index: 2; }
 
 /* ORBIT LINES */
@@ -756,9 +756,9 @@ body.dark .about-modern-image-frame { background: linear-gradient(180deg, #26364
 
 /* ABOUT TABLET */
 @media (max-width: 1200px) {
-    .about-modern-card { grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr); padding: 32px; min-height: 580px; }
-    .about-modern-image-frame { width: 280px; height: 370px; }
-    .about-modern-image-glow { width: 320px; height: 320px; }
+    .about-modern-card { grid-template-columns: minmax(0, 1.15fr) minmax(350px, 0.85fr); padding: 32px; min-height: 580px; }
+    .about-modern-image-frame { width: 330px; height: 430px; }
+    .about-modern-image-glow { width: 380px; height: 380px; }
     .about-modern-floating-card { right: 0; }
 }
 
@@ -766,9 +766,9 @@ body.dark .about-modern-image-frame { background: linear-gradient(180deg, #26364
 @media (max-width: 900px) {
     .about-modern-card { grid-template-columns: 1fr; min-height: auto; padding: 30px; gap: 10px; }
     .about-modern-content { order: 1; }
-    .about-modern-visual { order: 2; min-height: 430px; margin-top: 10px; }
-    .about-modern-image-frame { width: 270px; height: 350px; }
-    .about-modern-image-glow { width: 300px; height: 300px; }
+    .about-modern-visual { order: 2; min-height: 490px; margin-top: 10px; }
+    .about-modern-image-frame { width: 310px; height: 400px; }
+    .about-modern-image-glow { width: 350px; height: 350px; }
     .about-modern-floating-card { right: 5%; bottom: 50px; }
     .about-modern-role { grid-template-columns: 120px 1fr 30px; }
     .about-modern-cta { flex-direction: column; align-items: flex-start; }
@@ -792,9 +792,9 @@ body.dark .about-modern-image-frame { background: linear-gradient(180deg, #26364
     .about-modern-info-item { padding: 11px; gap: 10px; }
     .about-modern-info-item strong, .about-modern-info-bottom strong { font-size: 12px; }
     .about-modern-info-item small, .about-modern-info-bottom small { font-size: 10px; }
-    .about-modern-visual { min-height: 390px; }
-    .about-modern-image-frame { width: 230px; height: 300px; border-radius: 115px 115px 25px 25px; }
-    .about-modern-image-glow { width: 270px; height: 270px; }
+    .about-modern-visual { min-height: 440px; }
+    .about-modern-image-frame { width: 265px; height: 350px; border-radius: 132px 132px 25px 25px; }
+    .about-modern-image-glow { width: 310px; height: 310px; }
     .orbit-one { width: 330px; height: 190px; }
     .orbit-two { width: 360px; height: 240px; }
     .about-modern-floating-card { right: 0; bottom: 25px; min-width: 165px; padding: 10px 12px; }
@@ -810,8 +810,8 @@ body.dark .about-modern-image-frame { background: linear-gradient(180deg, #26364
     .about-modern-role { grid-template-columns: 42px 1fr 22px; }
     .role-icon { width: 34px; height: 34px; font-size: 9px; }
     .about-modern-role-name { font-size: 11px; }
-    .about-modern-image-frame { width: 205px; height: 275px; }
-    .about-modern-image-glow { width: 240px; height: 240px; }
+    .about-modern-image-frame { width: 235px; height: 310px; }
+    .about-modern-image-glow { width: 275px; height: 275px; }
     .about-modern-floating-card { min-width: 150px; }
 }
 
