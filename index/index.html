@@ -8,6 +8,422 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- ADDED: FREELANCE HOME STYLES -->
+    <style>
+        /* =========================================================
+           FREELANCE HERO
+        ========================================================= */
+
+        .freelance-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            padding: 8px 14px;
+            border: 1px solid #dce4ef;
+            border-radius: 30px;
+            background: #ffffff;
+            color: #102b52;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .freelance-status .status-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #25b56f;
+            box-shadow: 0 0 0 4px rgba(37, 181, 111, 0.12);
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 22px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 21px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
+            transition: 0.25s ease;
+        }
+
+        .hero-btn.primary {
+            background: #102b52;
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(16, 43, 82, 0.15);
+        }
+
+        .hero-btn.primary:hover {
+            background: #ff7118;
+            transform: translateY(-3px);
+        }
+
+        .hero-btn.secondary {
+            border: 1px solid #d8dee9;
+            background: #ffffff;
+            color: #102b52;
+        }
+
+        .hero-btn.secondary:hover {
+            border-color: #ff7118;
+            color: #ff7118;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           FREELANCE SECTIONS
+        ========================================================= */
+
+        .freelance-section {
+            margin-top: 18px;
+            padding: 28px;
+            border: 1px solid #d8d8d2;
+            border-radius: 24px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .freelance-section-heading {
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        .freelance-section-heading small {
+            display: block;
+            margin-bottom: 7px;
+            color: #ff7118;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+        }
+
+        .freelance-section-heading h2 {
+            margin-bottom: 8px;
+            color: #102b52;
+            font-size: clamp(27px, 3vw, 38px);
+            line-height: 1.1;
+        }
+
+        .freelance-section-heading p {
+            color: #66768e;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+
+        /* =========================================================
+           WHY WORK WITH ME
+        ========================================================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .why-card {
+            padding: 20px;
+            border: 1px solid #e1e7f2;
+            border-radius: 18px;
+            background: #f9fbff;
+            transition: 0.25s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            border-color: #ff7118;
+            box-shadow: 0 12px 28px rgba(16, 43, 82, 0.07);
+        }
+
+        .why-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 14px;
+            border-radius: 11px;
+            background: #ff7118;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .why-card h3 {
+            margin-bottom: 7px;
+            color: #102b52;
+            font-size: 15px;
+        }
+
+        .why-card p {
+            color: #66768e;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           FREELANCE SERVICES
+        ========================================================= */
+
+        .freelance-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .freelance-service {
+            padding: 22px;
+            border: 1px solid #e1e7f2;
+            border-radius: 19px;
+            background: #ffffff;
+            transition: 0.25s ease;
+        }
+
+        .freelance-service:hover {
+            transform: translateY(-4px);
+            border-color: #ff7118;
+            box-shadow: 0 12px 28px rgba(16, 43, 82, 0.07);
+        }
+
+        .freelance-service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 14px;
+            border-radius: 13px;
+            background: #fff0e6;
+            color: #ff7118;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .freelance-service h3 {
+            margin-bottom: 8px;
+            color: #102b52;
+            font-size: 16px;
+        }
+
+        .freelance-service p {
+            margin-bottom: 12px;
+            color: #66768e;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .freelance-service ul {
+            padding-left: 17px;
+            color: #53627a;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           HOW I WORK
+        ========================================================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .process-card {
+            position: relative;
+            padding: 20px;
+            border: 1px solid #e1e7f2;
+            border-radius: 18px;
+            background: #f9fbff;
+        }
+
+        .process-number {
+            color: #ff7118;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .process-card h3 {
+            margin: 8px 0 6px;
+            color: #102b52;
+            font-size: 15px;
+        }
+
+        .process-card p {
+            color: #66768e;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .freelance-cta {
+            position: relative;
+            margin-top: 18px;
+            padding: 42px 35px;
+            border-radius: 25px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(69, 111, 190, 0.35),
+                    transparent 35%
+                ),
+                #102b52;
+            overflow: hidden;
+        }
+
+        .freelance-cta small {
+            display: block;
+            margin-bottom: 8px;
+            color: #ff7118;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+        }
+
+        .freelance-cta h2 {
+            max-width: 700px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.05;
+        }
+
+        .freelance-cta p {
+            max-width: 650px;
+            margin-bottom: 22px;
+            color: #cbd5e5;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .freelance-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 13px 22px;
+            border-radius: 30px;
+            background: #ff7118;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
+            transition: 0.25s ease;
+        }
+
+        .freelance-cta-btn:hover {
+            background: #ffffff;
+            color: #102b52;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           DARK MODE
+        ========================================================= */
+
+        body.dark .freelance-status,
+        body.dark .hero-btn.secondary,
+        body.dark .freelance-section,
+        body.dark .freelance-service {
+            background: #182131;
+            border-color: #303b4d;
+        }
+
+        body.dark .freelance-status,
+        body.dark .hero-btn.secondary {
+            color: #ffffff;
+        }
+
+        body.dark .freelance-section-heading h2,
+        body.dark .why-card h3,
+        body.dark .freelance-service h3,
+        body.dark .process-card h3 {
+            color: #ffffff;
+        }
+
+        body.dark .freelance-section-heading p,
+        body.dark .why-card p,
+        body.dark .freelance-service p,
+        body.dark .freelance-service ul,
+        body.dark .process-card p {
+            color: #aeb9ca;
+        }
+
+        body.dark .why-card,
+        body.dark .process-card {
+            background: #202938;
+            border-color: #303b4d;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .freelance-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .freelance-section {
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .why-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .hero-btn {
+                width: 100%;
+            }
+
+            .freelance-cta {
+                padding: 30px 22px;
+                border-radius: 20px;
+            }
+
+            .freelance-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,16 +436,26 @@
         </div>
     </div>
 
-    <!-- SHARED NAVIGATION (filled in by JavaScript) -->
+
+    <!-- SHARED NAVIGATION -->
     <div id="navigation"></div>
+
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- HERO / HOME -->
+
+        <!-- =====================================================
+             HERO / HOME
+        ====================================================== -->
+
         <section class="hero">
+
             <div class="hero-text">
-                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+                <p class="eyebrow">
+                    WELCOME TO MY PORTFOLIO
+                </p>
 
                 <h1>
                     Hello, I am
@@ -47,192 +473,1342 @@
                     Designing simple, modern,
                     and user-centered digital experiences.
                 </p>
+
+
+                <!-- NEW: FREELANCE STATUS -->
+
+                <div class="freelance-status">
+                    <span class="status-dot"></span>
+                    Available for Freelance Projects
+                </div>
+
+
+                <!-- NEW: HERO BUTTONS -->
+
+                <div class="hero-actions">
+
+                    <a href="../page/contact.html"
+                       class="hero-btn primary">
+                        Hire Me
+                        <span>→</span>
+                    </a>
+
+                    <a href="../page/projects.html"
+                       class="hero-btn secondary">
+                        View My Work
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
             </div>
 
-            <a href="../page/contact.html" class="contact-button">
+
+            <!-- EXISTING GET IN TOUCH -->
+
+            <a href="../page/contact.html"
+               class="contact-button">
                 Get in touch
                 <span>→</span>
             </a>
+
         </section>
 
 
-        <!-- DAILY DRIVERS (sliding tools) -->
+
+        <!-- =====================================================
+             DAILY DRIVERS
+        ====================================================== -->
+
         <section class="dd-strip">
 
             <div class="dd-title">
-                <small>DAILY DRIVERS</small>
-                <strong>Tools I work with</strong>
+
+                <small>
+                    DAILY DRIVERS
+                </small>
+
+                <strong>
+                    Tools I work with
+                </strong>
+
             </div>
+
 
             <div class="dd-window">
+
                 <div class="dd-track">
 
+
                     <!-- SET 1 -->
+
                     <div class="dd-group">
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="Canva">Canva</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/PS.png" alt="Photoshop">Photoshop</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="Figma">Figma</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="CSS">CSS</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="HTML">HTML</div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/CANVA.png"
+                                alt="Canva">
+                            Canva
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/PS.png"
+                                alt="Photoshop">
+                            Photoshop
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/FIGMA.png"
+                                alt="Figma">
+                            Figma
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/CSS.png"
+                                alt="CSS">
+                            CSS
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/HTML.png"
+                                alt="HTML">
+                            HTML
+                        </div>
+
                     </div>
 
-                    <!-- SET 2 (duplicate for a seamless loop) -->
+
+                    <!-- SET 2 -->
+
                     <div class="dd-group" aria-hidden="true">
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="">Canva</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/PS.png" alt="">Photoshop</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="">Figma</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="">CSS</div>
-                        <div class="dd-item"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="">HTML</div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/CANVA.png"
+                                alt="">
+                            Canva
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/PS.png"
+                                alt="">
+                            Photoshop
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/FIGMA.png"
+                                alt="">
+                            Figma
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/CSS.png"
+                                alt="">
+                            CSS
+                        </div>
+
+                        <div class="dd-item">
+                            <img
+                                src="../assets/TOOLS%20LOGO/HTML.png"
+                                alt="">
+                            HTML
+                        </div>
+
                     </div>
 
                 </div>
+
             </div>
 
         </section>
 
 
-        <!-- HOME CARDS -->
+
+        <!-- =====================================================
+             EXISTING HOME CARDS
+        ====================================================== -->
+
         <section class="dashboard-grid">
 
-            <!-- PROJECTS (images scroll up, 3 at a time) -->
-            <a href="../page/projects.html" class="dashboard-card projects-card">
+
+            <!-- PROJECTS -->
+
+            <a href="../page/projects.html"
+               class="dashboard-card projects-card">
+
                 <div class="hc-split">
+
                     <div class="hc-left">
+
                         <div class="card-heading">
-                            <div class="card-icon">□</div>
-                            <div>
-                                <h2>Projects</h2>
-                                <p>Explore my creative, design, and development projects.</p>
+
+                            <div class="card-icon">
+                                □
                             </div>
+
+                            <div>
+
+                                <h2>
+                                    Projects
+                                </h2>
+
+                                <p>
+                                    Explore my creative, design,
+                                    and development projects.
+                                </p>
+
+                            </div>
+
                         </div>
-                        <div class="card-bottom">View Projects →</div>
+
+
+                        <div class="card-bottom">
+                            View Projects →
+                        </div>
+
                     </div>
+
 
                     <div class="hc-scroll">
+
                         <div class="hc-cols">
+
                             <div class="hc-col"></div>
                             <div class="hc-col"></div>
                             <div class="hc-col"></div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </a>
 
-            <!-- ABOUT (your photo) -->
-            <a href="../page/about.html" class="dashboard-card about-card">
+
+
+            <!-- ABOUT -->
+
+            <a href="../page/about.html"
+               class="dashboard-card about-card">
+
                 <div class="card-heading">
-                    <div class="card-icon">♙</div>
-                    <div>
-                        <h2>About</h2>
-                        <p>Learn more about my background and creative approach.</p>
+
+                    <div class="card-icon">
+                        ♙
                     </div>
+
+                    <div>
+
+                        <h2>
+                            About
+                        </h2>
+
+                        <p>
+                            Learn more about my background
+                            and creative approach.
+                        </p>
+
+                    </div>
+
                 </div>
-                <img class="hc-about-img" src="../assets/about.jpg" alt="Maedein John">
-                <div class="card-bottom">About Me →</div>
+
+
+                <img
+                    class="hc-about-img"
+                    src="../assets/about.jpg"
+                    alt="Maedein John">
+
+
+                <div class="card-bottom">
+                    About Me →
+                </div>
+
             </a>
+
+
 
             <!-- TOOLS -->
-            <a href="../page/tools.html" class="dashboard-card tools-card">
+
+            <a href="../page/tools.html"
+               class="dashboard-card tools-card">
+
                 <div class="card-heading">
-                    <div class="card-icon">✦</div>
-                    <div>
-                        <h2>Tools</h2>
-                        <p>Software and tools I use for my creative work.</p>
+
+                    <div class="card-icon">
+                        ✦
                     </div>
+
+                    <div>
+
+                        <h2>
+                            Tools
+                        </h2>
+
+                        <p>
+                            Software and tools I use
+                            for my creative work.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
                 <div class="hc-tools">
-                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/FIGMA.png" alt="">Figma</div>
-                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/CSS.png" alt="">CSS</div>
-                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/HTML.png" alt="">HTML</div>
-                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/PS.png" alt="">Photoshop</div>
-                    <div class="hc-tool"><img src="../assets/TOOLS%20LOGO/CANVA.png" alt="">Canva</div>
+
+                    <div class="hc-tool">
+                        <img
+                            src="../assets/TOOLS%20LOGO/FIGMA.png"
+                            alt="Figma">
+                        Figma
+                    </div>
+
+                    <div class="hc-tool">
+                        <img
+                            src="../assets/TOOLS%20LOGO/CSS.png"
+                            alt="CSS">
+                        CSS
+                    </div>
+
+                    <div class="hc-tool">
+                        <img
+                            src="../assets/TOOLS%20LOGO/HTML.png"
+                            alt="HTML">
+                        HTML
+                    </div>
+
+                    <div class="hc-tool">
+                        <img
+                            src="../assets/TOOLS%20LOGO/PS.png"
+                            alt="Photoshop">
+                        Photoshop
+                    </div>
+
+                    <div class="hc-tool">
+                        <img
+                            src="../assets/TOOLS%20LOGO/CANVA.png"
+                            alt="Canva">
+                        Canva
+                    </div>
+
                 </div>
-                <div class="card-bottom">View Tools →</div>
+
+
+                <div class="card-bottom">
+                    View Tools →
+                </div>
+
             </a>
 
-            <!-- SKILLS (graph) -->
-            <a href="../page/skills.html" class="dashboard-card skills-card">
+
+
+            <!-- SKILLS -->
+
+            <a href="../page/skills.html"
+               class="dashboard-card skills-card">
+
                 <div class="card-heading">
-                    <div class="card-icon">☆</div>
-                    <div>
-                        <h2>Skills</h2>
-                        <p>What I'm skilled in.</p>
+
+                    <div class="card-icon">
+                        ☆
                     </div>
+
+                    <div>
+
+                        <h2>
+                            Skills
+                        </h2>
+
+                        <p>
+                            What I'm skilled in.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
                 <div class="hc-skills">
-                    <div class="hc-skill" style="--w:95%"><span>Social Media</span><div class="hc-bar"><i></i></div><b>95%</b></div>
-                    <div class="hc-skill" style="--w:90%"><span>Logo Design</span><div class="hc-bar"><i></i></div><b>90%</b></div>
-                    <div class="hc-skill" style="--w:85%"><span>UI/UX</span><div class="hc-bar"><i></i></div><b>85%</b></div>
-                    <div class="hc-skill" style="--w:80%"><span>Graphic Design</span><div class="hc-bar"><i></i></div><b>80%</b></div>
-                    <div class="hc-skill" style="--w:75%"><span>Web Design</span><div class="hc-bar"><i></i></div><b>75%</b></div>
+
+                    <div
+                        class="hc-skill"
+                        style="--w:95%">
+
+                        <span>
+                            Social Media
+                        </span>
+
+                        <div class="hc-bar">
+                            <i></i>
+                        </div>
+
+                        <b>
+                            95%
+                        </b>
+
+                    </div>
+
+
+                    <div
+                        class="hc-skill"
+                        style="--w:90%">
+
+                        <span>
+                            Logo Design
+                        </span>
+
+                        <div class="hc-bar">
+                            <i></i>
+                        </div>
+
+                        <b>
+                            90%
+                        </b>
+
+                    </div>
+
+
+                    <div
+                        class="hc-skill"
+                        style="--w:85%">
+
+                        <span>
+                            UI/UX
+                        </span>
+
+                        <div class="hc-bar">
+                            <i></i>
+                        </div>
+
+                        <b>
+                            85%
+                        </b>
+
+                    </div>
+
+
+                    <div
+                        class="hc-skill"
+                        style="--w:80%">
+
+                        <span>
+                            Graphic Design
+                        </span>
+
+                        <div class="hc-bar">
+                            <i></i>
+                        </div>
+
+                        <b>
+                            80%
+                        </b>
+
+                    </div>
+
+
+                    <div
+                        class="hc-skill"
+                        style="--w:75%">
+
+                        <span>
+                            Web Design
+                        </span>
+
+                        <div class="hc-bar">
+                            <i></i>
+                        </div>
+
+                        <b>
+                            75%
+                        </b>
+
+                    </div>
+
                 </div>
-                <div class="card-bottom">View Skills →</div>
+
+
+                <div class="card-bottom">
+                    View Skills →
+                </div>
+
             </a>
+
+
 
             <!-- SERVICES -->
-            <a href="../page/services.html" class="dashboard-card services-card">
+
+            <a href="../page/services.html"
+               class="dashboard-card services-card">
+
                 <div class="card-heading">
-                    <div class="card-icon">◇</div>
-                    <div>
-                        <h2>Services</h2>
-                        <p>What I can offer you.</p>
+
+                    <div class="card-icon">
+                        ◇
                     </div>
+
+                    <div>
+
+                        <h2>
+                            Services
+                        </h2>
+
+                        <p>
+                            What I can offer you.
+                        </p>
+
+                    </div>
+
                 </div>
+
+
                 <ul class="service-list hc-services">
-                    <li><span>◇</span> Social Media Design <em>01</em></li>
-                    <li><span>◇</span> UI/UX Design <em>02</em></li>
-                    <li><span>◇</span> Graphic Design <em>03</em></li>
-                    <li><span>◇</span> Brand Identity <em>04</em></li>
-                    <li><span>◇</span> Front-End Development <em>05</em></li>
+
+                    <li>
+                        <span>◇</span>
+                        Social Media Design
+                        <em>01</em>
+                    </li>
+
+                    <li>
+                        <span>◇</span>
+                        UI/UX Design
+                        <em>02</em>
+                    </li>
+
+                    <li>
+                        <span>◇</span>
+                        Graphic Design
+                        <em>03</em>
+                    </li>
+
+                    <li>
+                        <span>◇</span>
+                        Brand Identity
+                        <em>04</em>
+                    </li>
+
+                    <li>
+                        <span>◇</span>
+                        Front-End Development
+                        <em>05</em>
+                    </li>
+
                 </ul>
-                <div class="card-bottom">View Services →</div>
+
+
+                <div class="card-bottom">
+                    View Services →
+                </div>
+
             </a>
 
         </section>
 
+
+
+        <!-- =====================================================
+             NEW: WHY WORK WITH ME
+        ====================================================== -->
+
+        <section class="freelance-section">
+
+            <div class="freelance-section-heading">
+
+                <small>
+                    WHY WORK WITH ME
+                </small>
+
+                <h2>
+                    Design that is clean, useful, and made for your goals.
+                </h2>
+
+                <p>
+                    I combine creativity, design thinking, and technical
+                    skills to create visual experiences that help brands
+                    communicate clearly online.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Creative
+                    </h3>
+
+                    <p>
+                        I create modern and engaging designs
+                        that fit your brand and audience.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        02
+                    </span>
+
+                    <h3>
+                        User-Focused
+                    </h3>
+
+                    <p>
+                        I consider usability, clarity, and
+                        user experience in every design.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Brand Consistency
+                    </h3>
+
+                    <p>
+                        I keep colors, typography, layouts,
+                        and visual elements consistent.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Reliable
+                    </h3>
+
+                    <p>
+                        Clear communication, organized work,
+                        and attention to project requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEW: FREELANCE SERVICES
+        ====================================================== -->
+
+        <section class="freelance-section">
+
+            <div class="freelance-section-heading">
+
+                <small>
+                    FREELANCE SERVICES
+                </small>
+
+                <h2>
+                    What I can help you create.
+                </h2>
+
+                <p>
+                    From social media content to UI/UX and web design,
+                    I can help turn your ideas into clean and professional
+                    digital visuals.
+                </p>
+
+            </div>
+
+
+            <div class="freelance-services-grid">
+
+
+                <!-- SERVICE 1 -->
+
+                <div class="freelance-service">
+
+                    <div class="freelance-service-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Social Media Design
+                    </h3>
+
+                    <p>
+                        Branded content designed to help
+                        businesses look professional online.
+                    </p>
+
+                    <ul>
+                        <li>Facebook Posts</li>
+                        <li>Instagram Posts</li>
+                        <li>Stories</li>
+                        <li>Carousels</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 2 -->
+
+                <div class="freelance-service">
+
+                    <div class="freelance-service-icon">
+                        ◇
+                    </div>
+
+                    <h3>
+                        Graphic Design
+                    </h3>
+
+                    <p>
+                        Promotional and marketing materials
+                        for businesses, events, and brands.
+                    </p>
+
+                    <ul>
+                        <li>Posters</li>
+                        <li>Flyers</li>
+                        <li>Business Materials</li>
+                        <li>Promotional Graphics</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 3 -->
+
+                <div class="freelance-service">
+
+                    <div class="freelance-service-icon">
+                        □
+                    </div>
+
+                    <h3>
+                        UI/UX & Web Design
+                    </h3>
+
+                    <p>
+                        Clean and user-friendly interfaces
+                        for websites and digital products.
+                    </p>
+
+                    <ul>
+                        <li>Wireframes</li>
+                        <li>Figma Prototypes</li>
+                        <li>Website UI</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEW: HOW I WORK
+        ====================================================== -->
+
+        <section class="freelance-section">
+
+            <div class="freelance-section-heading">
+
+                <small>
+                    HOW I WORK
+                </small>
+
+                <h2>
+                    A simple process from idea to final design.
+                </h2>
+
+            </div>
+
+
+            <div class="process-grid">
+
+
+                <div class="process-card">
+
+                    <span class="process-number">
+                        STEP 01
+                    </span>
+
+                    <h3>
+                        Discuss
+                    </h3>
+
+                    <p>
+                        We discuss your goals, requirements,
+                        preferred style, and project details.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <span class="process-number">
+                        STEP 02
+                    </span>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        I create the initial concept based
+                        on the agreed direction.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <span class="process-number">
+                        STEP 03
+                    </span>
+
+                    <h3>
+                        Refine
+                    </h3>
+
+                    <p>
+                        I apply feedback and make the necessary
+                        revisions to improve the final design.
+                    </p>
+
+                </div>
+
+
+                <div class="process-card">
+
+                    <span class="process-number">
+                        STEP 04
+                    </span>
+
+                    <h3>
+                        Deliver
+                    </h3>
+
+                    <p>
+                        Final approved files are prepared
+                        and delivered in the required format.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEW: FINAL FREELANCE CTA
+        ====================================================== -->
+
+        <section class="freelance-cta">
+
+            <small>
+                LET'S WORK TOGETHER
+            </small>
+
+            <h2>
+                Have a project in mind?
+            </h2>
+
+            <p>
+                Whether you need social media graphics, promotional
+                materials, UI/UX design, or a clean website interface,
+                I'd be happy to discuss your project.
+            </p>
+
+            <a href="../page/contact.html"
+               class="freelance-cta-btn">
+
+                Start a Project
+                <span>→</span>
+
+            </a>
+
+        </section>
+
+
+
         <!-- FOOTER -->
+
         <footer>
-            © 2026 Maedein John P. Cabalo. All rights reserved.
+
+            © 2026 Maedein John P. Cabalo.
+            All rights reserved.
+
         </footer>
 
     </main>
 
+
+
     <!-- JAVASCRIPT -->
+
     <script src="../js/scrip.js"></script>
 
 
-    <!-- PROJECT IMAGES: builds the 3 scrolling columns -->
+
+    <!-- PROJECT IMAGES -->
+
     <script>
-        const BASE = "../assets/client-collections/";
-        const EXTS = ["png", "jpg", "jpeg", "webp"];   // tries each until one loads
-        const range = (p, n) => Array.from({ length: n }, (_, i) => p + (i + 1) + "_1x1");
+
+        const BASE =
+            "../assets/client-collections/";
+
+        const EXTS =
+            ["png", "jpg", "jpeg", "webp"];
+
+        const range =
+            (p, n) =>
+                Array.from(
+                    { length: n },
+                    (_, i) =>
+                        p + (i + 1) + "_1x1"
+                );
+
 
         const columns = [
-            range("g", 15),   // g1_1x1 ... g15_1x1
-            range("j", 23),   // j1_1x1 ... j23_1x1
-            range("m", 22)    // m1_1x1 ... m22_1x1
+
+            range("g", 15),
+
+            range("j", 23),
+
+            range("m", 22)
+
         ];
 
+
         function makeImg(name) {
-            const img = new Image();
+
+            const img =
+                new Image();
+
             let i = 0;
+
             img.alt = "";
+
             img.onerror = () => {
-                if (++i < EXTS.length) img.src = BASE + name + "." + EXTS[i];
-                else img.remove();
+
+                if (++i < EXTS.length) {
+
+                    img.src =
+                        BASE +
+                        name +
+                        "." +
+                        EXTS[i];
+
+                } else {
+
+                    img.remove();
+
+                }
+
             };
-            img.src = BASE + name + "." + EXTS[0];
+
+            img.src =
+                BASE +
+                name +
+                "." +
+                EXTS[0];
+
             return img;
+
         }
 
-        document.querySelectorAll(".hc-col").forEach((col, c) => {
-            const names = columns[c];
-            const track = document.createElement("div");
-            track.className = "hc-track";
-            track.style.animationDuration = names.length * 2.8 + "s";   // bigger = slower
-            for (let r = 0; r < 2; r++) names.forEach(n => track.appendChild(makeImg(n)));
-            col.appendChild(track);
+
+        document
+            .querySelectorAll(".hc-col")
+            .forEach((col, c) => {
+
+                const names =
+                    columns[c];
+
+                const track =
+                    document.createElement("div");
+
+                track.className =
+                    "hc-track";
+
+                track.style.animationDuration =
+                    names.length * 2.8 + "s";
+
+
+                for (
+                    let r = 0;
+                    r < 2;
+                    r++
+                ) {
+
+                    names.forEach(n => {
+
+                        track.appendChild(
+                            makeImg(n)
+                        );
+
+                    });
+
+                }
+
+                col.appendChild(track);
+
+            });
+
+    </script>
+
+
+
+    <!-- ===== CHAT BOT (NEW) ===== -->
+    <script>
+function startChatbot() {
+
+    /* ---------- 1. EDIT YOUR DETAILS HERE ---------- */
+    var CONFIG = {
+        botName: "Maedein's Assistant",
+        avatar: "../assets/MDN.png",
+        email: "youremail@example.com",          // <-- change this
+        contactPage: "../page/contact.html",
+        projectsPage: "../page/projects.html",
+        servicesPage: "../page/services.html",
+        skillsPage: "../page/skills.html",
+        toolsPage: "../page/tools.html",
+        aboutPage: "../page/about.html",
+        welcome: "Hi there! 👋 I'm Maedein's assistant. Ask me about his services, tools, or how to start a project.",
+        fallback: "Thanks for your message! I'm not sure about that one, but Maedein will personally reply if you send it through the <a href=\"{contact}\">contact page</a>.",
+        chips: ["Services", "Pricing", "Hire me", "View projects"]
+    };
+
+    /* ---------- 2. AUTO-REPLIES (add or edit freely) ---------- */
+    var RULES = [
+        {
+            keys: ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "kumusta"],
+            answer: "Hello! 👋 Welcome to Maedein's portfolio. How can I help you today?"
+        },
+        {
+            keys: ["service", "offer", "what do you do", "what can you do", "help me with"],
+            answer: "Maedein offers: <br>• Social Media Design<br>• UI/UX Design<br>• Graphic Design<br>• Brand Identity<br>• Front-End Development<br><br>See details on the <a href=\"{services}\">Services page</a>."
+        },
+        {
+            keys: ["price", "pricing", "rate", "cost", "how much", "quote", "budget", "fee", "magkano"],
+            answer: "Pricing depends on the project size and requirements. Send your project details on the <a href=\"{contact}\">contact page</a> and Maedein will give you a quote."
+        },
+        {
+            keys: ["hire", "freelance", "available", "availability", "work with", "project in mind", "start a project"],
+            answer: "Yes, Maedein is <b>available for freelance projects</b>! 🟢 Tell him about your project on the <a href=\"{contact}\">contact page</a>."
+        },
+        {
+            keys: ["contact", "email", "reach", "message", "get in touch", "facebook", "social"],
+            answer: "You can reach Maedein through the <a href=\"{contact}\">contact page</a> or email <a href=\"mailto:{email}\">{email}</a>."
+        },
+        {
+            keys: ["project", "portfolio", "work sample", "samples", "past work", "client"],
+            answer: "You can browse his creative, design, and development work on the <a href=\"{projects}\">Projects page</a>."
+        },
+        {
+            keys: ["skill", "good at", "expert", "experience", "strength"],
+            answer: "Maedein's strongest skills are Social Media Design, Logo Design, UI/UX, Graphic Design, and Web Design. See the <a href=\"{skills}\">Skills page</a>."
+        },
+        {
+            keys: ["tool", "software", "figma", "photoshop", "canva", "html", "css", "use for"],
+            answer: "He works with Canva, Photoshop, Figma, HTML, and CSS. More on the <a href=\"{tools}\">Tools page</a>."
+        },
+        {
+            keys: ["who are you", "who is", "about", "background", "tell me about", "yourself"],
+            answer: "Maedein John P. Cabalo is a Social Media Designer, UI/UX Designer, Graphic Designer, and Front-End Developer who creates simple, modern, user-centered designs. Learn more on the <a href=\"{about}\">About page</a>."
+        },
+        {
+            keys: ["process", "how do you work", "steps", "workflow"],
+            answer: "The process is simple:<br>1. <b>Discuss</b> your goals<br>2. <b>Design</b> the first concept<br>3. <b>Refine</b> with your feedback<br>4. <b>Deliver</b> final files"
+        },
+        {
+            keys: ["revision", "revisions", "changes", "edit"],
+            answer: "Yes, feedback and revisions are part of the process. The number of revisions can be agreed on before the project starts."
+        },
+        {
+            keys: ["how long", "turnaround", "deadline", "delivery", "days", "rush", "urgent"],
+            answer: "Timelines depend on the project. Share your deadline on the <a href=\"{contact}\">contact page</a> and Maedein will confirm if it's doable."
+        },
+        {
+            keys: ["logo", "brand", "branding"],
+            answer: "Yes! Logo design and brand identity are among Maedein's strongest services. Send your idea on the <a href=\"{contact}\">contact page</a>."
+        },
+        {
+            keys: ["website", "web design", "landing page", "developer", "front-end", "frontend", "ui", "ux"],
+            answer: "Maedein designs clean, responsive interfaces in Figma and builds them with HTML and CSS. Check the <a href=\"{projects}\">Projects page</a> for examples."
+        },
+        {
+            keys: ["thanks", "thank you", "salamat", "ok thanks"],
+            answer: "You're welcome! 😊 Let me know if you need anything else."
+        },
+        {
+            keys: ["bye", "goodbye", "see you", "later"],
+            answer: "Thanks for visiting! Have a great day 👋"
+        }
+    ];
+
+    /* ---------- 3. STYLES ---------- */
+    var css = "\
+#cb-launcher{position:fixed;right:24px;bottom:24px;z-index:9000;width:64px;height:64px;border:3px solid #ff6b16;border-radius:50%;background:#102b52;padding:0;cursor:pointer;overflow:hidden;box-shadow:0 10px 28px rgba(16,43,82,.3);transition:.25s ease}\
+#cb-launcher:hover{transform:scale(1.07)}\
+#cb-launcher img{width:100%;height:100%;object-fit:contain;padding:6px;display:block}\
+#cb-launcher .cb-dot{position:absolute;right:3px;top:3px;width:13px;height:13px;border:2px solid #fff;border-radius:50%;background:#25b56f}\
+#cb-tip{position:fixed;right:24px;bottom:98px;z-index:9000;padding:10px 16px;border:1px solid #e3e6f0;border-radius:16px 16px 4px 16px;background:#fff;color:#102b52;font:700 13px Arial,Helvetica,sans-serif;box-shadow:0 8px 22px rgba(16,43,82,.14);cursor:pointer;opacity:0;transform:translateY(8px);pointer-events:none;transition:.3s ease}\
+#cb-tip.show{opacity:1;transform:none;pointer-events:auto}\
+#cb-panel{position:fixed;right:24px;bottom:100px;z-index:9001;width:370px;max-width:calc(100vw - 28px);height:540px;max-height:calc(100vh - 130px);display:flex;flex-direction:column;overflow:hidden;border:1px solid #d8dee9;border-radius:24px;background:#fff;box-shadow:0 25px 60px rgba(16,43,82,.25);font-family:Arial,Helvetica,sans-serif;opacity:0;transform:translateY(16px) scale(.97);pointer-events:none;transition:.25s ease}\
+#cb-panel.open{opacity:1;transform:none;pointer-events:auto}\
+.cb-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#102b52;color:#fff}\
+.cb-head img{width:40px;height:40px;object-fit:contain;border-radius:50%;background:#fff0e6;padding:4px}\
+.cb-head strong{display:block;font-size:14px}\
+.cb-head small{display:flex;align-items:center;gap:6px;color:#cbd5e5;font-size:11px}\
+.cb-head small::before{content:'';width:8px;height:8px;border-radius:50%;background:#25b56f}\
+.cb-close{margin-left:auto;border:0;background:transparent;color:#fff;font-size:26px;line-height:1;cursor:pointer;opacity:.8}\
+.cb-close:hover{opacity:1;color:#ff7118}\
+.cb-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f7f6f0}\
+.cb-msg{max-width:84%;padding:10px 14px;border-radius:16px;font-size:13.5px;line-height:1.55;word-wrap:break-word;animation:cbIn .25s ease}\
+.cb-msg.bot{align-self:flex-start;border-bottom-left-radius:4px;background:#fff;color:#102b52;border:1px solid #e1e7f2}\
+.cb-msg.user{align-self:flex-end;border-bottom-right-radius:4px;background:#ff6b16;color:#fff}\
+.cb-msg a{color:#ff6b16;font-weight:700}\
+.cb-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;background:#f7f6f0}\
+.cb-chip{padding:7px 13px;border:1px solid #d8d8d2;border-radius:20px;background:#fff;color:#102b52;font:700 12px Arial,Helvetica,sans-serif;cursor:pointer;transition:.2s ease}\
+.cb-chip:hover{border-color:#ff6b16;color:#ff6b16}\
+.cb-typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;border:1px solid #e1e7f2;border-radius:16px;border-bottom-left-radius:4px;background:#fff}\
+.cb-typing i{width:7px;height:7px;border-radius:50%;background:#9aa6b6;animation:cbDot 1s infinite}\
+.cb-typing i:nth-child(2){animation-delay:.15s}.cb-typing i:nth-child(3){animation-delay:.3s}\
+.cb-form{display:flex;gap:8px;padding:12px;border-top:1px solid #e1e7f2;background:#fff}\
+.cb-form input{flex:1;min-width:0;padding:12px 15px;border:1px solid #cfd5e3;border-radius:25px;background:#fff;color:#102b52;font:inherit;font-size:14px;outline:none}\
+.cb-form input:focus{border-color:#ff6b16;box-shadow:0 0 0 3px rgba(255,107,22,.12)}\
+.cb-form button{width:44px;height:44px;border:0;border-radius:50%;background:#102b52;color:#fff;font-size:17px;cursor:pointer;transition:.2s ease}\
+.cb-form button:hover{background:#ff6b16}\
+@keyframes cbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}\
+@keyframes cbDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}\
+body.dark #cb-panel{background:#182131;border-color:#303b4d}\
+body.dark .cb-body,body.dark .cb-chips{background:#111827}\
+body.dark .cb-msg.bot,body.dark .cb-typing{background:#202938;border-color:#303b4d;color:#fff}\
+body.dark .cb-chip{background:#202938;border-color:#374151;color:#fff}\
+body.dark .cb-form{background:#182131;border-color:#303b4d}\
+body.dark .cb-form input{background:#202938;border-color:#374151;color:#fff}\
+body.dark #cb-tip{background:#182131;border-color:#303b4d;color:#fff}\
+@media(max-width:600px){#cb-launcher{right:14px;bottom:14px;width:56px;height:56px}#cb-tip{right:14px;bottom:80px}#cb-panel{right:14px;bottom:82px;height:calc(100vh - 110px)}}\
+@media(prefers-reduced-motion:reduce){.cb-msg,.cb-typing i{animation:none}}";
+
+    var style = document.createElement("style");
+    style.textContent = css;
+    document.head.appendChild(style);
+
+    /* ---------- 4. HTML ---------- */
+    var existingChat = document.querySelector(".ct-chat"); // the floating avatar on your contact page
+
+    var launcher = null, tip = null;
+
+    if (!existingChat) {
+        launcher = document.createElement("button");
+        launcher.id = "cb-launcher";
+        launcher.setAttribute("aria-label", "Open chat");
+        launcher.innerHTML = '<img src="' + CONFIG.avatar + '" alt=""><span class="cb-dot"></span>';
+        document.body.appendChild(launcher);
+
+        tip = document.createElement("div");
+        tip.id = "cb-tip";
+        tip.textContent = "Need help? Chat with me 👋";
+        document.body.appendChild(tip);
+    }
+
+    var panel = document.createElement("div");
+    panel.id = "cb-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", "Chat");
+    panel.innerHTML =
+        '<div class="cb-head">' +
+            '<img src="' + CONFIG.avatar + '" alt="">' +
+            '<div><strong>' + CONFIG.botName + '</strong><small>Online · replies instantly</small></div>' +
+            '<button class="cb-close" aria-label="Close chat">&times;</button>' +
+        '</div>' +
+        '<div class="cb-body"></div>' +
+        '<div class="cb-chips"></div>' +
+        '<form class="cb-form" autocomplete="off">' +
+            '<input type="text" placeholder="Type your message..." aria-label="Message" maxlength="300">' +
+            '<button type="submit" aria-label="Send">&#10148;</button>' +
+        '</form>';
+    document.body.appendChild(panel);
+
+    var body = panel.querySelector(".cb-body");
+    var chipsBox = panel.querySelector(".cb-chips");
+    var form = panel.querySelector(".cb-form");
+    var input = form.querySelector("input");
+
+    /* ---------- 5. LOGIC ---------- */
+    function fill(text) {
+        return text
+            .replace(/\{contact\}/g, CONFIG.contactPage)
+            .replace(/\{projects\}/g, CONFIG.projectsPage)
+            .replace(/\{services\}/g, CONFIG.servicesPage)
+            .replace(/\{skills\}/g, CONFIG.skillsPage)
+            .replace(/\{tools\}/g, CONFIG.toolsPage)
+            .replace(/\{about\}/g, CONFIG.aboutPage)
+            .replace(/\{email\}/g, CONFIG.email);
+    }
+
+    function keyMatches(text, key) {
+        var safe = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        var re = key.length <= 3 ? new RegExp("\\b" + safe + "\\b") : new RegExp("\\b" + safe);
+        return re.test(text);
+    }
+
+    function getReply(raw) {
+        var text = raw.toLowerCase();
+        var best = null, bestScore = 0;
+
+        RULES.forEach(function (rule) {
+            var score = 0;
+            rule.keys.forEach(function (k) {
+                if (keyMatches(text, k)) score += k.length > 3 ? 2 : 1;
+            });
+            if (score > bestScore) { bestScore = score; best = rule; }
         });
+
+        return fill(best ? best.answer : CONFIG.fallback);
+    }
+
+    function addMessage(content, who) {
+        var el = document.createElement("div");
+        el.className = "cb-msg " + who;
+        if (who === "bot") el.innerHTML = content;   // our own trusted text
+        else el.textContent = content;               // visitor text is never parsed as HTML
+        body.appendChild(el);
+        body.scrollTop = body.scrollHeight;
+    }
+
+    function botReply(text) {
+        var typing = document.createElement("div");
+        typing.className = "cb-typing";
+        typing.innerHTML = "<i></i><i></i><i></i>";
+        body.appendChild(typing);
+        body.scrollTop = body.scrollHeight;
+
+        setTimeout(function () {
+            typing.remove();
+            addMessage(text, "bot");
+        }, 600 + Math.min(text.length * 6, 900));
+    }
+
+    function send(text) {
+        text = text.trim();
+        if (!text) return;
+        addMessage(text, "user");
+        botReply(getReply(text));
+    }
+
+    CONFIG.chips.forEach(function (label) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "cb-chip";
+        b.textContent = label;
+        b.addEventListener("click", function () { send(label); });
+        chipsBox.appendChild(b);
+    });
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        send(input.value);
+        input.value = "";
+    });
+
+    /* ---------- 6. OPEN / CLOSE ---------- */
+    var greeted = false;
+
+    function openChat() {
+        panel.classList.add("open");
+        if (tip) tip.classList.remove("show");
+        if (!greeted) {
+            greeted = true;
+            botReply(CONFIG.welcome);
+        }
+        setTimeout(function () { input.focus(); }, 300);
+    }
+
+    function closeChat() { panel.classList.remove("open"); }
+
+    function toggleChat() {
+        panel.classList.contains("open") ? closeChat() : openChat();
+    }
+
+    panel.querySelector(".cb-close").addEventListener("click", closeChat);
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeChat();
+    });
+
+    if (launcher) launcher.addEventListener("click", toggleChat);
+    if (tip) tip.addEventListener("click", openChat);
+
+    // On the contact page, the existing floating avatar opens the bot instead of a duplicate button
+    if (existingChat) {
+        existingChat.addEventListener("click", function (e) {
+            e.preventDefault();
+            toggleChat();
+        });
+        panel.style.bottom = "190px";
+    }
+
+    // Friendly nudge once per visit (after the loading screen)
+    if (tip && !sessionStorage.getItem("cbTipShown")) {
+        setTimeout(function () {
+            if (!panel.classList.contains("open")) {
+                tip.classList.add("show");
+                sessionStorage.setItem("cbTipShown", "1");
+                setTimeout(function () { tip.classList.remove("show"); }, 6000);
+            }
+        }, 4500);
+    }
+
+}
+
+/* Runs after the page is ready, and can never break your other scripts */
+(function () {
+    function run() {
+        try { startChatbot(); }
+        catch (e) { console.warn("Chatbot error (site not affected):", e); }
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", run);
+    } else {
+        run();
+    }
+})();
+
     </script>
 
 </body>

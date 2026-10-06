@@ -163,12 +163,14 @@
 
     </main>
 
- 
-    </a>
-
+    <!-- NOTE: make sure this filename matches your real file (scrip.js vs script.js) -->
     <script src="../js/scrip.js"></script>
 
     <script>
+        // After you activate the form, FormSubmit gives you a random alias.
+        // Replace the email below with that alias to hide your address from page source.
+        const FORM_ENDPOINT = "https://formsubmit.co/ajax/cmaedein@gmail.com";
+
         const form = document.getElementById("contactForm");
         const btn = document.getElementById("sendBtn");
         const btnText = document.getElementById("sendText");
@@ -199,7 +201,7 @@
             setStatus("", "");
 
             try {
-                const res = await fetch("https://formsubmit.co/ajax/cmaedein@gmail.com", {
+                const res = await fetch(FORM_ENDPOINT, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -224,6 +226,7 @@
                     throw new Error(data.message || "Send failed");
                 }
             } catch (err) {
+                console.error("Form error:", err);
                 setStatus("err", "Sorry, something went wrong. Please email me directly at cmaedein@gmail.com.");
             } finally {
                 btn.disabled = false;
