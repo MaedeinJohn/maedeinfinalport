@@ -428,13 +428,42 @@
 
 <body>
 
-    <!-- LOADING SCREEN -->
-    <div id="loading-screen">
-        <div class="loading-content">
-            <img src="../assets/MDN.png" alt="Maedein Logo" class="loading-logo">
-            <div class="loading-line"></div>
+ 
+<!-- SAMURAI LOADING SCREEN -->
+<div id="loading-screen">
+    <div class="loading-fire" aria-hidden="true"></div>
+    <div class="loading-particles" aria-hidden="true"></div>
+
+    <div class="loading-content">
+        <p class="loading-kicker">WELCOME TO MY </p>
+        <BR>
+
+        <img
+            src="../assets/MDN.png"
+            alt="Maedein Samurai Logo"
+            class="loading-logo"
+        >
+
+        <h2 class="loading-title"> PORTFOLIO</h2>
+        <p class="loading-subtitle">DESIGN • CREATE • DOMINATE</p>
+
+        <div
+            class="loading-progress"
+            role="progressbar"
+            aria-label="Loading portfolio"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+        >
+            <div class="loading-progress-fill"></div>
         </div>
+
+        <p class="loading-status">
+            <span id="loading-status-text">INITIALIZING PORTFOLIO</span>
+            <span id="loading-percent">0%</span>
+        </p>
     </div>
+</div>
 
 
     <!-- SHARED NAVIGATION -->

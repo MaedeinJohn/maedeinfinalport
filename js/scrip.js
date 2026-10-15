@@ -285,35 +285,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       PORTFOLIO LOADING SCREEN
-    ===================================================== */
+  
+/* =====================================================
+   FIXED SAMURAI LOADING SCREEN
+===================================================== */
 
-    const loadingScreen =
-        document.getElementById(
-            "loading-screen"
-        );
+(function () {
+    function initializeLoadingScreen() {
+        const screen = document.getElementById("loading-screen");
 
+        if (!screen) return;
 
-    if (loadingScreen) {
+        const fill = screen.querySelector(".loading-progress-fill");
+        const percent = document.getElementById("loading-percent");
+        const status = document.getElementById("loading-status-text");
+        const bar = screen.querySelector(".loading-progress");
 
-        window.addEventListener(
-            "load",
-            function () {
+        let progress = 0;
+        let dismissed = false;
 
-                setTimeout(
-                    function () {
+        function hideScreen() {
+            if (dismissed) return;
+            dismissed = true;
 
-                        loadingScreen.classList.add(
-                            "hide"
-                        );
+            if (fill) fill.style.width = "100%";
+            if (percent) percent.textContent = "100%";
+            if (bar) bar.setAttribute("aria-valuenow", "100");
+            if (status) status.textContent = "READY TO DOMINATE";
 
-                    },
-                    2200
-                );
+            screen.classList.add("hide");
 
+            // Remove overlay from interaction after fade-out.
+            window.setTimeout(function () {
+                if (screen.parentNode) {
+                    screen.style.display = "none";
+                }
+            }, 1000);
+        }
+
+        // Progress animation independent of window.load.
+        const progressTimer = window.setInterval(function () {
+            if (dismissed) {
+                window.clearInterval(progressTimer);
+                return;
             }
-        );
 
+            progress = Math.min(progress + 4, 90);
+
+            if (fill) fill.style.width = progress + "%";
+            if (percent) percent.textContent = progress + "%";
+            if (bar) bar.setAttribute("aria-valuenow", String(progress));
+
+            if (status) {
+                status.textContent =
+                    progress < 35 ? "IGNITING THE EXPERIENCE" :
+                    progress < 70 ? "LOADING PORTFOLIO" :
+                    "PREPARING YOUR EXPERIENCE";
+            }
+        }, 100);
+
+        // Do not wait indefinitely for every resource to finish.
+        window.setTimeout(hideScreen, 2500);
     }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initializeLoadingScreen,
+            { once: true }
+        );
+    } else {
+        initializeLoadingScreen();
+    }
+})();
 
 });

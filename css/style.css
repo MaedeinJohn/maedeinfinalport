@@ -2130,3 +2130,295 @@ body.dark .sk-icon { background: #202938; }
     .sk-bar i { animation: none; }
     .sk-photo img { transition: none; }
 }
+
+
+/* =====================================================
+   SAMURAI LOADING SCREEN — MAEDEIN
+   ADD THIS AT THE END OF style.css
+===================================================== */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 24px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #18243a 0%,
+            #080b12 48%,
+            #020304 100%
+        );
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    isolation: isolate;
+}
+
+#loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 420px);
+    text-align: center;
+    animation: samuraiContentIn 0.9s ease both;
+}
+
+.loading-fire {
+    position: absolute;
+    z-index: 0;
+    width: min(80vw, 540px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 72, 0, 0.2) 0%,
+        rgba(255, 65, 0, 0.09) 35%,
+        transparent 70%
+    );
+    filter: blur(12px);
+    animation: samuraiFirePulse 2.2s ease-in-out infinite;
+}
+
+.loading-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, #ff6b16 1px, transparent 2px),
+        radial-gradient(circle, #ff3d00 1.5px, transparent 2.5px),
+        radial-gradient(circle, #ffc078 1px, transparent 2px);
+    background-size: 97px 113px, 151px 173px, 211px 197px;
+    background-position: 0 0, 40px 80px, 90px 25px;
+    opacity: 0.5;
+    animation: samuraiEmbers 9s linear infinite;
+}
+
+.loading-kicker {
+    margin-bottom: 12px;
+    color: #ff792d;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 7px;
+    animation: samuraiTextIn 1s 0.15s both;
+}
+
+.loading-logo {
+    display: block;
+    width: min(62vw, 310px);
+    height: min(62vw, 310px);
+    object-fit: contain;
+    filter:
+        drop-shadow(0 0 8px rgba(255, 74, 0, 0.8))
+        drop-shadow(0 0 28px rgba(255, 65, 0, 0.38));
+    transform-origin: center;
+    animation:
+        samuraiLogoReveal 1.35s cubic-bezier(.2,.8,.2,1) both,
+        samuraiLogoFloat 3s 1.35s ease-in-out infinite;
+}
+
+.loading-title {
+    margin-top: -4px;
+    color: #fff4e7;
+    font-size: clamp(35px, 8vw, 58px);
+    font-weight: 1000;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 5px;
+    text-shadow:
+        3px 3px 0 #a72a08,
+        0 0 22px rgba(255, 70, 0, 0.35);
+    animation: samuraiTextIn 0.8s 0.35s both;
+}
+
+.loading-subtitle {
+    margin-top: 12px;
+    color: #b9c0ce;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    animation: samuraiTextIn 0.8s 0.5s both;
+}
+
+.loading-progress {
+    width: min(280px, 80%);
+    height: 4px;
+    margin-top: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #30313a;
+    box-shadow: 0 0 15px rgba(255, 75, 0, 0.12);
+}
+
+.loading-progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+        90deg,
+        #a92305,
+        #ff4a0b,
+        #ffb15c
+    );
+    box-shadow: 0 0 12px #ff4a0b;
+    transition: width 0.15s linear;
+}
+
+.loading-status {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: min(280px, 80%);
+    margin-top: 12px;
+    color: #aeb6c5;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+#loading-percent {
+    color: #ff792d;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ANIMATIONS */
+
+@keyframes samuraiLogoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.55) rotate(-5deg);
+        filter: brightness(0.3);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1.07) rotate(1deg);
+        filter: brightness(1.5)
+            drop-shadow(0 0 30px rgba(255, 70, 0, 0.8));
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes samuraiLogoFloat {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}
+
+@keyframes samuraiFirePulse {
+    0%, 100% {
+        transform: scale(0.88);
+        opacity: 0.55;
+    }
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+@keyframes samuraiEmbers {
+    from {
+        background-position: 0 0, 40px 80px, 90px 25px;
+        opacity: 0.25;
+    }
+    to {
+        background-position: 0 -450px, 40px -550px, 90px -350px;
+        opacity: 0.65;
+    }
+}
+
+@keyframes samuraiContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes samuraiTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    #loading-screen {
+        padding: 18px;
+    }
+
+    .loading-logo {
+        width: min(72vw, 270px);
+        height: min(72vw, 270px);
+    }
+
+    .loading-kicker {
+        font-size: 9px;
+        letter-spacing: 5px;
+    }
+
+    .loading-title {
+        letter-spacing: 3px;
+    }
+
+    .loading-subtitle {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-content,
+    .loading-logo,
+    .loading-kicker,
+    .loading-title,
+    .loading-subtitle,
+    .loading-fire,
+    .loading-particles {
+        animation: none !important;
+    }
+
+    .loading-logo {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
