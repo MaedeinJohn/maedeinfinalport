@@ -1769,3 +1769,715 @@ body.dark-mode .logo-design-item {
     outline: 3px solid #22D3EE;
     outline-offset: 4px;
 }
+
+
+
+/* =========================================================
+   DARK MODE FIX - HIGH CONTRAST
+   Supports theme classes on body OR html, plus data-theme.
+   Keep this section at the VERY END of the stylesheet.
+========================================================= */
+
+:root {
+    color-scheme: light;
+}
+
+/* Dark theme detection: common theme-toggle conventions */
+html.dark-mode,
+body.dark-mode,
+html.dark,
+body.dark,
+html[data-theme="dark"],
+body[data-theme="dark"],
+[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Dark mode card and preview surfaces */
+html.dark-mode .projects-page .project-box,
+body.dark-mode .projects-page .project-box,
+html.dark .projects-page .project-box,
+body.dark .projects-page .project-box,
+html[data-theme="dark"] .projects-page .project-box,
+body[data-theme="dark"] .projects-page .project-box,
+[data-bs-theme="dark"] .projects-page .project-box,
+html.dark-mode .client-page .client-folder,
+body.dark-mode .client-page .client-folder,
+html.dark .client-page .client-folder,
+body.dark .client-page .client-folder,
+html[data-theme="dark"] .client-page .client-folder,
+body[data-theme="dark"] .client-page .client-folder,
+[data-bs-theme="dark"] .client-page .client-folder,
+html.dark-mode .client-page .client-header,
+body.dark-mode .client-page .client-header,
+html.dark .client-page .client-header,
+body.dark .client-page .client-header,
+html[data-theme="dark"] .client-page .client-header,
+body[data-theme="dark"] .client-page .client-header,
+[data-bs-theme="dark"] .client-page .client-header {
+    background-color: #101827 !important;
+    border-color: #35445a !important;
+    color: #f4f7fb !important;
+}
+
+/* Headings: prevent white-on-cream or dark-on-dark text */
+html.dark-mode .projects-intro h1,
+body.dark-mode .projects-intro h1,
+html.dark .projects-intro h1,
+body.dark .projects-intro h1,
+html[data-theme="dark"] .projects-intro h1,
+body[data-theme="dark"] .projects-intro h1,
+[data-bs-theme="dark"] .projects-intro h1,
+html.dark-mode .project-box h2,
+body.dark-mode .project-box h2,
+html.dark .project-box h2,
+body.dark .project-box h2,
+html[data-theme="dark"] .project-box h2,
+body[data-theme="dark"] .project-box h2,
+[data-bs-theme="dark"] .project-box h2,
+html.dark-mode .social-folder-header h2,
+body.dark-mode .social-folder-header h2,
+html.dark .social-folder-header h2,
+body.dark .social-folder-header h2,
+html[data-theme="dark"] .social-folder-header h2,
+body[data-theme="dark"] .social-folder-header h2,
+[data-bs-theme="dark"] .social-folder-header h2,
+html.dark-mode .client-folder h3,
+body.dark-mode .client-folder h3,
+html.dark .client-folder h3,
+body.dark .client-folder h3,
+html[data-theme="dark"] .client-folder h3,
+body[data-theme="dark"] .client-folder h3,
+[data-bs-theme="dark"] .client-folder h3,
+html.dark-mode .client-header h1,
+body.dark-mode .client-header h1,
+html.dark .client-header h1,
+body.dark .client-header h1,
+html[data-theme="dark"] .client-header h1,
+body[data-theme="dark"] .client-header h1,
+[data-bs-theme="dark"] .client-header h1,
+html.dark-mode .design-count,
+body.dark-mode .design-count,
+html.dark .design-count,
+body.dark .design-count,
+html[data-theme="dark"] .design-count,
+body[data-theme="dark"] .design-count,
+[data-bs-theme="dark"] .design-count {
+    color: #f4f7fb !important;
+}
+
+/* Paragraphs and descriptive text */
+html.dark-mode .projects-intro p,
+body.dark-mode .projects-intro p,
+html.dark .projects-intro p,
+body.dark .projects-intro p,
+html[data-theme="dark"] .projects-intro p,
+body[data-theme="dark"] .projects-intro p,
+[data-bs-theme="dark"] .projects-intro p,
+html.dark-mode .project-box p,
+body.dark-mode .project-box p,
+html.dark .project-box p,
+body.dark .project-box p,
+html[data-theme="dark"] .project-box p,
+body[data-theme="dark"] .project-box p,
+[data-bs-theme="dark"] .project-box p,
+html.dark-mode .social-folder-header p,
+body.dark-mode .social-folder-header p,
+html.dark .social-folder-header p,
+body.dark .social-folder-header p,
+html[data-theme="dark"] .social-folder-header p,
+body[data-theme="dark"] .social-folder-header p,
+[data-bs-theme="dark"] .social-folder-header p,
+html.dark-mode .client-folder p,
+body.dark-mode .client-folder p,
+html.dark .client-folder p,
+body.dark .client-folder p,
+html[data-theme="dark"] .client-folder p,
+body[data-theme="dark"] .client-folder p,
+[data-bs-theme="dark"] .client-folder p,
+html.dark-mode .client-header p,
+body.dark-mode .client-header p,
+html.dark .client-header p,
+body.dark .client-header p,
+html[data-theme="dark"] .client-header p,
+body[data-theme="dark"] .client-header p,
+[data-bs-theme="dark"] .client-header p {
+    color: #bdc9d9 !important;
+}
+
+/* Lists, tags, and count labels */
+html.dark-mode .web-items div,
+body.dark-mode .web-items div,
+html.dark .web-items div,
+body.dark .web-items div,
+html[data-theme="dark"] .web-items div,
+body[data-theme="dark"] .web-items div,
+[data-bs-theme="dark"] .web-items div,
+html.dark-mode .graphic-items div,
+body.dark-mode .graphic-items div,
+html.dark .graphic-items div,
+body.dark .graphic-items div,
+html[data-theme="dark"] .graphic-items div,
+body[data-theme="dark"] .graphic-items div,
+[data-bs-theme="dark"] .graphic-items div {
+    color: #f4f7fb !important;
+    border-bottom-color: #35445a !important;
+}
+
+html.dark-mode .social-tags span,
+body.dark-mode .social-tags span,
+html.dark .social-tags span,
+body.dark .social-tags span,
+html[data-theme="dark"] .social-tags span,
+body[data-theme="dark"] .social-tags span,
+[data-bs-theme="dark"] .social-tags span,
+html.dark-mode .folder-count,
+body.dark-mode .folder-count,
+html.dark .folder-count,
+body.dark .folder-count,
+html[data-theme="dark"] .folder-count,
+body[data-theme="dark"] .folder-count,
+[data-bs-theme="dark"] .folder-count {
+    background-color: #1b2638 !important;
+    border-color: #35445a !important;
+    color: #e5edf7 !important;
+}
+
+/* Image preview surfaces remain distinct from cards */
+html.dark-mode .social-post-preview,
+body.dark-mode .social-post-preview,
+html.dark .social-post-preview,
+body.dark .social-post-preview,
+html[data-theme="dark"] .social-post-preview,
+body[data-theme="dark"] .social-post-preview,
+[data-bs-theme="dark"] .social-post-preview,
+html.dark-mode .logo-preview,
+body.dark-mode .logo-preview,
+html.dark .logo-preview,
+body.dark .logo-preview,
+html[data-theme="dark"] .logo-preview,
+body[data-theme="dark"] .logo-preview,
+[data-bs-theme="dark"] .logo-preview {
+    background-color: #1b2638 !important;
+    border-color: #35445a !important;
+}
+
+/* Brand placeholder and logo images */
+html.dark-mode .brand-placeholder,
+body.dark-mode .brand-placeholder,
+html.dark .brand-placeholder,
+body.dark .brand-placeholder,
+html[data-theme="dark"] .brand-placeholder,
+body[data-theme="dark"] .brand-placeholder,
+[data-bs-theme="dark"] .brand-placeholder {
+    background-color: #1b2638 !important;
+    color: #f4f7fb !important;
+}
+
+html.dark-mode .logo-design-item img,
+body.dark-mode .logo-design-item img,
+html.dark .logo-design-item img,
+body.dark .logo-design-item img,
+html[data-theme="dark"] .logo-design-item img,
+body[data-theme="dark"] .logo-design-item img,
+[data-bs-theme="dark"] .logo-design-item img {
+    background-color: #ffffff !important;
+}
+
+/* Lightbox text stays readable */
+html.dark-mode .lightbox-number,
+body.dark-mode .lightbox-number,
+html.dark .lightbox-number,
+body.dark .lightbox-number,
+html[data-theme="dark"] .lightbox-number,
+body[data-theme="dark"] .lightbox-number,
+[data-bs-theme="dark"] .lightbox-number {
+    color: #ffffff !important;
+}
+
+/* Accessibility: visible keyboard focus */
+html.dark-mode .uiux-project-link:focus-visible,
+body.dark-mode .uiux-project-link:focus-visible,
+html.dark .uiux-project-link:focus-visible,
+body.dark .uiux-project-link:focus-visible,
+html[data-theme="dark"] .uiux-project-link:focus-visible,
+body[data-theme="dark"] .uiux-project-link:focus-visible,
+[data-bs-theme="dark"] .uiux-project-link:focus-visible {
+    outline-color: #22d3ee !important;
+}
+
+/* =========================================================
+   FINAL OVERRIDE: PROJECTS DARK MODE TEXT VISIBILITY
+   This block intentionally goes last.
+========================================================= */
+
+:is(html, body).dark-mode .projects-page .project-box,
+:is(html, body).dark-mode .client-page .client-folder,
+:is(html, body).dark-mode .client-page .client-header,
+:is(html, body).dark .projects-page .project-box,
+:is(html, body).dark .client-page .client-folder,
+:is(html, body).dark .client-page .client-header,
+:is(html, body)[data-theme="dark"] .projects-page .project-box,
+:is(html, body)[data-theme="dark"] .client-page .client-folder,
+:is(html, body)[data-theme="dark"] .client-page .client-header,
+[data-bs-theme="dark"] .projects-page .project-box,
+[data-bs-theme="dark"] .client-page .client-folder,
+[data-bs-theme="dark"] .client-page .client-header {
+    background: #101827 !important;
+    color: #f4f7fb !important;
+    border-color: #35445a !important;
+}
+
+:is(html, body).dark-mode .projects-page .project-box h2,
+:is(html, body).dark-mode .projects-page .project-box p,
+:is(html, body).dark-mode .projects-page .web-items div,
+:is(html, body).dark-mode .projects-page .graphic-items div,
+:is(html, body).dark-mode .projects-page .brand-placeholder,
+:is(html, body).dark-mode .social-folder-header h2,
+:is(html, body).dark-mode .social-folder-header p,
+:is(html, body).dark-mode .client-page .client-folder h3,
+:is(html, body).dark-mode .client-page .client-folder p,
+:is(html, body).dark-mode .client-page .client-header h1,
+:is(html, body).dark-mode .client-page .client-header p,
+:is(html, body).dark-mode .client-page .design-count,
+:is(html, body).dark .projects-page .project-box h2,
+:is(html, body).dark .projects-page .project-box p,
+:is(html, body).dark .projects-page .web-items div,
+:is(html, body).dark .projects-page .graphic-items div,
+:is(html, body).dark .projects-page .brand-placeholder,
+:is(html, body).dark .social-folder-header h2,
+:is(html, body).dark .social-folder-header p,
+:is(html, body).dark .client-page .client-folder h3,
+:is(html, body).dark .client-page .client-folder p,
+:is(html, body).dark .client-page .client-header h1,
+:is(html, body).dark .client-page .client-header p,
+:is(html, body).dark .client-page .design-count,
+:is(html, body)[data-theme="dark"] .projects-page .project-box h2,
+:is(html, body)[data-theme="dark"] .projects-page .project-box p,
+:is(html, body)[data-theme="dark"] .projects-page .web-items div,
+:is(html, body)[data-theme="dark"] .projects-page .graphic-items div,
+:is(html, body)[data-theme="dark"] .projects-page .brand-placeholder,
+:is(html, body)[data-theme="dark"] .social-folder-header h2,
+:is(html, body)[data-theme="dark"] .social-folder-header p,
+:is(html, body)[data-theme="dark"] .client-page .client-folder h3,
+:is(html, body)[data-theme="dark"] .client-page .client-folder p,
+:is(html, body)[data-theme="dark"] .client-page .client-header h1,
+:is(html, body)[data-theme="dark"] .client-page .client-header p,
+:is(html, body)[data-theme="dark"] .client-page .design-count,
+[data-bs-theme="dark"] .projects-page .project-box h2,
+[data-bs-theme="dark"] .projects-page .project-box p,
+[data-bs-theme="dark"] .projects-page .web-items div,
+[data-bs-theme="dark"] .projects-page .graphic-items div,
+[data-bs-theme="dark"] .projects-page .brand-placeholder,
+[data-bs-theme="dark"] .social-folder-header h2,
+[data-bs-theme="dark"] .social-folder-header p,
+[data-bs-theme="dark"] .client-page .client-folder h3,
+[data-bs-theme="dark"] .client-page .client-folder p,
+[data-bs-theme="dark"] .client-page .client-header h1,
+[data-bs-theme="dark"] .client-page .client-header p,
+[data-bs-theme="dark"] .client-page .design-count {
+    color: #f4f7fb !important;
+}
+
+:is(html, body).dark-mode .projects-page .brand-placeholder,
+:is(html, body).dark .projects-page .brand-placeholder,
+:is(html, body)[data-theme="dark"] .projects-page .brand-placeholder,
+[data-bs-theme="dark"] .projects-page .brand-placeholder {
+    background: #1b2638 !important;
+}
+
+:is(html, body).dark-mode .projects-page .social-tags span,
+:is(html, body).dark-mode .projects-page .folder-count,
+:is(html, body).dark .projects-page .social-tags span,
+:is(html, body).dark .projects-page .folder-count,
+:is(html, body)[data-theme="dark"] .projects-page .social-tags span,
+:is(html, body)[data-theme="dark"] .projects-page .folder-count,
+[data-bs-theme="dark"] .projects-page .social-tags span,
+[data-bs-theme="dark"] .projects-page .folder-count {
+    background: #1b2638 !important;
+    color: #f4f7fb !important;
+    border-color: #35445a !important;
+}
+
+:is(html, body).dark-mode .projects-page .open-folder,
+:is(html, body).dark-mode .projects-page .view-designs,
+:is(html, body).dark-mode .client-page .back-projects,
+:is(html, body).dark .projects-page .open-folder,
+:is(html, body).dark .projects-page .view-designs,
+:is(html, body).dark .client-page .back-projects,
+:is(html, body)[data-theme="dark"] .projects-page .open-folder,
+:is(html, body)[data-theme="dark"] .projects-page .view-designs,
+:is(html, body)[data-theme="dark"] .client-page .back-projects,
+[data-bs-theme="dark"] .projects-page .open-folder,
+[data-bs-theme="dark"] .projects-page .view-designs,
+[data-bs-theme="dark"] .client-page .back-projects {
+    color: #ff8a3d !important;
+}
+
+/* Keep the actual design images' intended colors */
+:is(html, body).dark-mode .social-post-preview,
+:is(html, body).dark-mode .logo-preview,
+:is(html, body).dark .social-post-preview,
+:is(html, body).dark .logo-preview,
+:is(html, body)[data-theme="dark"] .social-post-preview,
+:is(html, body)[data-theme="dark"] .logo-preview,
+[data-bs-theme="dark"] .social-post-preview,
+[data-bs-theme="dark"] .logo-preview {
+    background: #1b2638 !important;
+    border-color: #35445a !important;
+}
+
+/* =========================================================
+   EXTRA FIX: ALL H3 HEADINGS IN DARK MODE
+   Ensures H3 text remains readable across project/client pages.
+========================================================= */
+html.dark-mode .projects-page h3,
+body.dark-mode .projects-page h3,
+html.dark .projects-page h3,
+body.dark .projects-page h3,
+html[data-theme="dark"] .projects-page h3,
+body[data-theme="dark"] .projects-page h3,
+[data-bs-theme="dark"] .projects-page h3,
+html.dark-mode .client-page h3,
+body.dark-mode .client-page h3,
+html.dark .client-page h3,
+body.dark .client-page h3,
+html[data-theme="dark"] .client-page h3,
+body[data-theme="dark"] .client-page h3,
+[data-bs-theme="dark"] .client-page h3,
+html.dark-mode .social-folders h3,
+body.dark-mode .social-folders h3,
+html.dark .social-folders h3,
+body.dark .social-folders h3,
+html[data-theme="dark"] .social-folders h3,
+body[data-theme="dark"] .social-folders h3,
+[data-bs-theme="dark"] .social-folders h3 {
+    color: #f4f7fb !important;
+}
+
+/* =========================================================
+   LAST OVERRIDE: ALL PROJECT / CLIENT TEXT + H3 FIX
+   Keep this section at the very end of the stylesheet.
+========================================================= */
+
+/* Ensure every heading, including h3, is readable in dark mode. */
+body.dark-mode .projects-page h1,
+body.dark-mode .projects-page h2,
+body.dark-mode .projects-page h3,
+body.dark-mode .projects-page h4,
+body.dark-mode .projects-page h5,
+body.dark-mode .projects-page h6,
+body.dark-mode .client-page h1,
+body.dark-mode .client-page h2,
+body.dark-mode .client-page h3,
+body.dark-mode .client-page h4,
+body.dark-mode .client-page h5,
+body.dark-mode .client-page h6,
+html.dark-mode .projects-page h1,
+html.dark-mode .projects-page h2,
+html.dark-mode .projects-page h3,
+html.dark-mode .projects-page h4,
+html.dark-mode .projects-page h5,
+html.dark-mode .projects-page h6,
+html.dark-mode .client-page h1,
+html.dark-mode .client-page h2,
+html.dark-mode .client-page h3,
+html.dark-mode .client-page h4,
+html.dark-mode .client-page h5,
+html.dark-mode .client-page h6,
+body.dark .projects-page h1,
+body.dark .projects-page h2,
+body.dark .projects-page h3,
+body.dark .projects-page h4,
+body.dark .projects-page h5,
+body.dark .projects-page h6,
+body.dark .client-page h1,
+body.dark .client-page h2,
+body.dark .client-page h3,
+body.dark .client-page h4,
+body.dark .client-page h5,
+body.dark .client-page h6,
+html[data-theme="dark"] .projects-page h1,
+html[data-theme="dark"] .projects-page h2,
+html[data-theme="dark"] .projects-page h3,
+html[data-theme="dark"] .projects-page h4,
+html[data-theme="dark"] .projects-page h5,
+html[data-theme="dark"] .projects-page h6,
+html[data-theme="dark"] .client-page h1,
+html[data-theme="dark"] .client-page h2,
+html[data-theme="dark"] .client-page h3,
+html[data-theme="dark"] .client-page h4,
+html[data-theme="dark"] .client-page h5,
+html[data-theme="dark"] .client-page h6,
+[data-bs-theme="dark"] .projects-page h1,
+[data-bs-theme="dark"] .projects-page h2,
+[data-bs-theme="dark"] .projects-page h3,
+[data-bs-theme="dark"] .projects-page h4,
+[data-bs-theme="dark"] .projects-page h5,
+[data-bs-theme="dark"] .projects-page h6,
+[data-bs-theme="dark"] .client-page h1,
+[data-bs-theme="dark"] .client-page h2,
+[data-bs-theme="dark"] .client-page h3,
+[data-bs-theme="dark"] .client-page h4,
+[data-bs-theme="dark"] .client-page h5,
+[data-bs-theme="dark"] .client-page h6 {
+    color: #f4f7fb !important;
+}
+
+/* Paragraphs and supporting text across the project/client sections. */
+body.dark-mode .projects-page p,
+body.dark-mode .client-page p,
+html.dark-mode .projects-page p,
+html.dark-mode .client-page p,
+body.dark .projects-page p,
+body.dark .client-page p,
+html[data-theme="dark"] .projects-page p,
+html[data-theme="dark"] .client-page p,
+[data-bs-theme="dark"] .projects-page p,
+[data-bs-theme="dark"] .client-page p {
+    color: #bdc9d9 !important;
+}
+
+/* Text in service lists and category rows. */
+body.dark-mode .projects-page .web-items *,
+body.dark-mode .projects-page .graphic-items *,
+html.dark-mode .projects-page .web-items *,
+html.dark-mode .projects-page .graphic-items *,
+body.dark .projects-page .web-items *,
+body.dark .projects-page .graphic-items *,
+html[data-theme="dark"] .projects-page .web-items *,
+html[data-theme="dark"] .projects-page .graphic-items *,
+[data-bs-theme="dark"] .projects-page .web-items *,
+[data-bs-theme="dark"] .projects-page .graphic-items * {
+    color: #f4f7fb !important;
+    border-color: #35445a !important;
+}
+
+/* Cards, client headers, and folders. */
+body.dark-mode .projects-page .project-box,
+body.dark-mode .client-page .client-folder,
+body.dark-mode .client-page .client-header,
+html.dark-mode .projects-page .project-box,
+html.dark-mode .client-page .client-folder,
+html.dark-mode .client-page .client-header,
+body.dark .projects-page .project-box,
+body.dark .client-page .client-folder,
+body.dark .client-page .client-header,
+html[data-theme="dark"] .projects-page .project-box,
+html[data-theme="dark"] .client-page .client-folder,
+html[data-theme="dark"] .client-page .client-header,
+[data-bs-theme="dark"] .projects-page .project-box,
+[data-bs-theme="dark"] .client-page .client-folder,
+[data-bs-theme="dark"] .client-page .client-header {
+    background-color: #101827 !important;
+    border-color: #35445a !important;
+    color: #f4f7fb !important;
+}
+
+/* Muted count labels and tags. */
+body.dark-mode .projects-page .folder-count,
+body.dark-mode .projects-page .social-tags span,
+html.dark-mode .projects-page .folder-count,
+html.dark-mode .projects-page .social-tags span,
+body.dark .projects-page .folder-count,
+body.dark .projects-page .social-tags span,
+html[data-theme="dark"] .projects-page .folder-count,
+html[data-theme="dark"] .projects-page .social-tags span,
+[data-bs-theme="dark"] .projects-page .folder-count,
+[data-bs-theme="dark"] .projects-page .social-tags span {
+    background-color: #1b2638 !important;
+    border-color: #35445a !important;
+    color: #f4f7fb !important;
+}
+
+/* Links remain orange so they stand out on dark cards. */
+body.dark-mode .projects-page .open-folder,
+body.dark-mode .projects-page .view-designs,
+body.dark-mode .client-page .back-projects,
+html.dark-mode .projects-page .open-folder,
+html.dark-mode .projects-page .view-designs,
+html.dark-mode .client-page .back-projects,
+body.dark .projects-page .open-folder,
+body.dark .projects-page .view-designs,
+body.dark .client-page .back-projects,
+html[data-theme="dark"] .projects-page .open-folder,
+html[data-theme="dark"] .projects-page .view-designs,
+html[data-theme="dark"] .client-page .back-projects,
+[data-bs-theme="dark"] .projects-page .open-folder,
+[data-bs-theme="dark"] .projects-page .view-designs,
+[data-bs-theme="dark"] .client-page .back-projects {
+    color: #ff8a3d !important;
+}
+
+/* =========================================================
+   FINAL OVERRIDE: ALL PROJECT / UI-UX / WEB / GRAPHIC / CLIENT TEXT
+   Supports a dark-mode class on either <html> or <body>,
+   plus common data-theme attributes. Place at the end of CSS.
+========================================================= */
+
+/* Dark-mode card surfaces */
+.dark-mode .project-box,
+.dark-mode .client-folder,
+.dark-mode .client-header,
+.dark .project-box,
+.dark .client-folder,
+.dark .client-header,
+[data-theme="dark"] .project-box,
+[data-theme="dark"] .client-folder,
+[data-theme="dark"] .client-header,
+[data-bs-theme="dark"] .project-box,
+[data-bs-theme="dark"] .client-folder,
+[data-bs-theme="dark"] .client-header {
+    background: #101827 !important;
+    border-color: #35445a !important;
+    color: #f4f7fb !important;
+}
+
+/* All headings in the listed sections, including h3 */
+.dark-mode .projects-intro h1,
+.dark-mode .project-box h1,
+.dark-mode .project-box h2,
+.dark-mode .project-box h3,
+.dark-mode .project-box h4,
+.dark-mode .project-box h5,
+.dark-mode .project-box h6,
+.dark-mode .social-folder-header h1,
+.dark-mode .social-folder-header h2,
+.dark-mode .social-folder-header h3,
+.dark-mode .client-folder h1,
+.dark-mode .client-folder h2,
+.dark-mode .client-folder h3,
+.dark-mode .client-folder h4,
+.dark-mode .client-header h1,
+.dark-mode .client-header h2,
+.dark-mode .client-header h3,
+.dark-mode .client-header h4,
+.dark-mode .design-count,
+.dark .project-box h1,
+.dark .project-box h2,
+.dark .project-box h3,
+.dark .project-box h4,
+.dark .project-box h5,
+.dark .project-box h6,
+.dark .client-folder h1,
+.dark .client-folder h2,
+.dark .client-folder h3,
+.dark .client-folder h4,
+[data-theme="dark"] .project-box h1,
+[data-theme="dark"] .project-box h2,
+[data-theme="dark"] .project-box h3,
+[data-theme="dark"] .project-box h4,
+[data-theme="dark"] .project-box h5,
+[data-theme="dark"] .project-box h6,
+[data-theme="dark"] .client-folder h1,
+[data-theme="dark"] .client-folder h2,
+[data-theme="dark"] .client-folder h3,
+[data-theme="dark"] .client-folder h4,
+[data-bs-theme="dark"] .project-box h1,
+[data-bs-theme="dark"] .project-box h2,
+[data-bs-theme="dark"] .project-box h3,
+[data-bs-theme="dark"] .project-box h4,
+[data-bs-theme="dark"] .project-box h5,
+[data-bs-theme="dark"] .project-box h6,
+[data-bs-theme="dark"] .client-folder h1,
+[data-bs-theme="dark"] .client-folder h2,
+[data-bs-theme="dark"] .client-folder h3,
+[data-bs-theme="dark"] .client-folder h4 {
+    color: #f4f7fb !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Descriptions and ordinary text */
+.dark-mode .projects-intro p,
+.dark-mode .project-box p,
+.dark-mode .project-box small,
+.dark-mode .project-box label,
+.dark-mode .project-box li,
+.dark-mode .project-box .web-items div,
+.dark-mode .project-box .graphic-items div,
+.dark-mode .client-folder p,
+.dark-mode .client-folder small,
+.dark-mode .client-folder label,
+.dark-mode .client-header p,
+.dark-mode .social-folder-header p,
+.dark .projects-intro p,
+.dark .project-box p,
+.dark .client-folder p,
+.dark .client-header p,
+[data-theme="dark"] .projects-intro p,
+[data-theme="dark"] .project-box p,
+[data-theme="dark"] .project-box small,
+[data-theme="dark"] .project-box label,
+[data-theme="dark"] .project-box li,
+[data-theme="dark"] .client-folder p,
+[data-theme="dark"] .client-folder small,
+[data-theme="dark"] .client-header p,
+[data-theme="dark"] .social-folder-header p,
+[data-bs-theme="dark"] .projects-intro p,
+[data-bs-theme="dark"] .project-box p,
+[data-bs-theme="dark"] .project-box small,
+[data-bs-theme="dark"] .project-box label,
+[data-bs-theme="dark"] .project-box li,
+[data-bs-theme="dark"] .client-folder p,
+[data-bs-theme="dark"] .client-folder small,
+[data-bs-theme="dark"] .client-header p,
+[data-bs-theme="dark"] .social-folder-header p {
+    color: #bdc9d9 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* UI/UX placeholder and service lists */
+.dark-mode .brand-placeholder,
+.dark .brand-placeholder,
+[data-theme="dark"] .brand-placeholder,
+[data-bs-theme="dark"] .brand-placeholder {
+    background: #1b2638 !important;
+    color: #f4f7fb !important;
+}
+
+.dark-mode .web-items div,
+.dark-mode .graphic-items div,
+.dark .web-items div,
+.dark .graphic-items div,
+[data-theme="dark"] .web-items div,
+[data-theme="dark"] .graphic-items div,
+[data-bs-theme="dark"] .web-items div,
+[data-bs-theme="dark"] .graphic-items div {
+    color: #f4f7fb !important;
+    border-color: #35445a !important;
+}
+
+/* Counts, tags and folder links */
+.dark-mode .folder-count,
+.dark .folder-count,
+[data-theme="dark"] .folder-count,
+[data-bs-theme="dark"] .folder-count {
+    background: #1b2638 !important;
+    color: #bdc9d9 !important;
+}
+
+.dark-mode .social-tags span,
+.dark .social-tags span,
+[data-theme="dark"] .social-tags span,
+[data-bs-theme="dark"] .social-tags span {
+    background: #1b2638 !important;
+    border-color: #35445a !important;
+    color: #f4f7fb !important;
+}
+
+.dark-mode .open-folder,
+.dark-mode .view-designs,
+.dark-mode .back-projects,
+.dark .open-folder,
+.dark .view-designs,
+.dark .back-projects,
+[data-theme="dark"] .open-folder,
+[data-theme="dark"] .view-designs,
+[data-theme="dark"] .back-projects,
+[data-bs-theme="dark"] .open-folder,
+[data-bs-theme="dark"] .view-designs,
+[data-bs-theme="dark"] .back-projects {
+    color: #ff8a3d !important;
+}

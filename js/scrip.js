@@ -1,11 +1,18 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       PORTFOLIO PARTICLE BACKGROUND
+    ===================================================== */
+
+    document.body.classList.add("portfolio-particles-bg");
+
 
     /* =====================================================
        LOAD SHARED NAVIGATION
     ===================================================== */
 
-    const navigation =
-        document.getElementById("navigation");
+    const navigation = document.getElementById("navigation");
 
     if (navigation) {
 
@@ -14,11 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (response) {
 
                 if (!response.ok) {
-
-                    throw new Error(
-                        "Unable to load navigation.html"
-                    );
-
+                    throw new Error("Unable to load navigation.html");
                 }
 
                 return response.text();
@@ -30,27 +33,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 navigation.innerHTML = data;
 
                 setActiveNavigation();
-
                 initializeTheme();
-
                 initializeVisitorCounter();
 
             })
 
             .catch(function (error) {
 
-                console.error(
-                    "Navigation Error:",
-                    error
-                );
+                console.error("Navigation Error:", error);
+
+                initializeTheme();
+                initializeVisitorCounter();
 
             });
 
     } else {
 
-        console.log(
-            "Navigation container not found."
-        );
+        initializeTheme();
+        initializeVisitorCounter();
 
     }
 
@@ -61,33 +61,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setActiveNavigation() {
 
-        const links =
-            document.querySelectorAll(
-                ".side-nav a"
-            );
-
-        const currentPage =
-            window.location.pathname;
+        const links = document.querySelectorAll(".side-nav a");
+        const currentPage = window.location.pathname;
 
         links.forEach(function (link) {
 
-            const linkPage =
-                new URL(
+            try {
+
+                const linkPage = new URL(
                     link.href,
                     window.location.href
                 ).pathname;
 
-            link.classList.remove(
-                "active"
-            );
+                link.classList.remove("active");
 
-            if (
-                currentPage === linkPage
-            ) {
+                if (currentPage === linkPage) {
+                    link.classList.add("active");
+                }
 
-                link.classList.add(
-                    "active"
-                );
+            } catch (error) {
+
+                console.error("Navigation Link Error:", error);
 
             }
 
@@ -97,114 +91,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       DARK MODE
+       LIGHT MODE / DARK MODE
+       SINGLE INITIALIZATION
     ===================================================== */
 
     function initializeTheme() {
 
-        const themeToggle =
-            document.getElementById(
-                "themeToggle"
-            );
+        const themeToggle = document.getElementById("themeToggle");
 
-        const themeIcon =
-            document.querySelector(
-                ".theme-icon"
-            );
+        if (!themeToggle) {
+            console.warn("Theme toggle button not found.");
+        }
 
-        const savedTheme =
-            localStorage.getItem(
-                "theme"
-            );
+        let themeIcon = document.querySelector(".theme-icon");
 
+        let savedTheme = "light";
 
-        /* =================================================
-           LOAD SAVED THEME
-        ================================================= */
+        try {
+            savedTheme = localStorage.getItem("theme") || "light";
+        } catch (error) {
+            console.warn("Theme storage is unavailable.", error);
+        }
 
-        if (
-            savedTheme === "dark"
-        ) {
+        function updateThemeIcon() {
 
-            document.body.classList.add(
-                "dark"
-            );
+            themeIcon = document.querySelector(".theme-icon");
 
             if (themeIcon) {
-
                 themeIcon.textContent =
-                    "☀";
+                    document.body.classList.contains("dark") ? "☀" : "☾";
+            }
+
+        }
+
+        function applyTheme(theme) {
+
+            const isDark = theme === "dark";
+
+            document.body.classList.toggle("dark", isDark);
+
+            /* Update the theme button and icon */
+
+            if (themeToggle) {
+
+                themeToggle.setAttribute(
+                    "aria-label",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+
+                themeToggle.setAttribute(
+                    "title",
+                    isDark ? "Switch to light mode" : "Switch to dark mode"
+                );
+
+                themeToggle.setAttribute(
+                    "aria-pressed",
+                    String(isDark)
+                );
 
             }
 
-        } else {
+            updateThemeIcon();
 
-            document.body.classList.remove(
-                "dark"
-            );
+            /* Save selected theme */
 
-            if (themeIcon) {
+            try {
 
-                themeIcon.textContent =
-                    "☾";
+                localStorage.setItem(
+                    "theme",
+                    isDark ? "dark" : "light"
+                );
+
+            } catch (error) {
+
+                console.warn("Unable to save theme preference.", error);
 
             }
 
         }
 
+        /* Apply the saved theme */
 
-        /* =================================================
-           THEME TOGGLE
-        ================================================= */
+        applyTheme(savedTheme === "dark" ? "dark" : "light");
 
-        if (themeToggle) {
+        /* Register only one click handler */
 
-            themeToggle.addEventListener(
-                "click",
-                function () {
+        if (themeToggle && !themeToggle.dataset.themeInitialized) {
 
-                    document.body.classList.toggle(
-                        "dark"
-                    );
+            themeToggle.dataset.themeInitialized = "true";
 
-                    const isDark =
-                        document.body.classList.contains(
-                            "dark"
-                        );
+            themeToggle.addEventListener("click", function () {
 
+                const isDark =
+                    document.body.classList.contains("dark");
 
-                    if (isDark) {
+                applyTheme(isDark ? "light" : "dark");
 
-                        if (themeIcon) {
-
-                            themeIcon.textContent =
-                                "☀";
-
-                        }
-
-                        localStorage.setItem(
-                            "theme",
-                            "dark"
-                        );
-
-                    } else {
-
-                        if (themeIcon) {
-
-                            themeIcon.textContent =
-                                "☾";
-
-                        }
-
-                        localStorage.setItem(
-                            "theme",
-                            "light"
-                        );
-
-                    }
-
-                }
-            );
+            });
 
         }
 
@@ -217,22 +200,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initializeVisitorCounter() {
 
-        const visitorCount =
-            document.getElementById(
-                "visitorCount"
-            );
-
+        const visitorCount = document.getElementById("visitorCount");
 
         if (!visitorCount) {
-
             return;
-
         }
 
-
-        const counterKey =
-            "maedein_john_portfolio_visitors_2026";
-
+        const counterKey = "maedein_john_portfolio_visitors_2026";
 
         fetch(
             "https://countapi.mileshilliard.com/api/v1/hit/" +
@@ -242,11 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (response) {
 
                 if (!response.ok) {
-
-                    throw new Error(
-                        "Visitor counter request failed"
-                    );
-
+                    throw new Error("Visitor counter request failed");
                 }
 
                 return response.json();
@@ -255,15 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             .then(function (data) {
 
-                if (
-                    data &&
-                    data.value !== undefined
-                ) {
+                if (data && data.value !== undefined) {
 
                     visitorCount.textContent =
-                        Number(
-                            data.value
-                        ).toLocaleString();
+                        Number(data.value).toLocaleString();
 
                 }
 
@@ -271,13 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             .catch(function (error) {
 
-                console.error(
-                    "Visitor Counter Error:",
-                    error
-                );
+                console.error("Visitor Counter Error:", error);
 
-                visitorCount.textContent =
-                    "0";
+                visitorCount.textContent = "0";
 
             });
 
@@ -285,16 +246,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-  
-/* =====================================================
-   FIXED SAMURAI LOADING SCREEN
-===================================================== */
+       SAMURAI LOADING SCREEN
+    ===================================================== */
 
-(function () {
-    function initializeLoadingScreen() {
+    (function initializeLoadingScreen() {
+
         const screen = document.getElementById("loading-screen");
 
-        if (!screen) return;
+        if (!screen) {
+            return;
+        }
 
         const fill = screen.querySelector(".loading-progress-fill");
         const percent = document.getElementById("loading-percent");
@@ -305,26 +266,45 @@ document.addEventListener("DOMContentLoaded", function () {
         let dismissed = false;
 
         function hideScreen() {
-            if (dismissed) return;
+
+            if (dismissed) {
+                return;
+            }
+
             dismissed = true;
 
-            if (fill) fill.style.width = "100%";
-            if (percent) percent.textContent = "100%";
-            if (bar) bar.setAttribute("aria-valuenow", "100");
-            if (status) status.textContent = "READY TO DOMINATE";
+            if (fill) {
+                fill.style.width = "100%";
+            }
+
+            if (percent) {
+                percent.textContent = "100%";
+            }
+
+            if (bar) {
+                bar.setAttribute("aria-valuenow", "100");
+            }
+
+            if (status) {
+                status.textContent = "READY TO DOMINATE";
+            }
 
             screen.classList.add("hide");
 
-            // Remove overlay from interaction after fade-out.
             window.setTimeout(function () {
+
                 if (screen.parentNode) {
                     screen.style.display = "none";
                 }
+
             }, 1000);
+
         }
 
-        // Progress animation independent of window.load.
+        /* Loading progress animation */
+
         const progressTimer = window.setInterval(function () {
+
             if (dismissed) {
                 window.clearInterval(progressTimer);
                 return;
@@ -332,31 +312,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
             progress = Math.min(progress + 4, 90);
 
-            if (fill) fill.style.width = progress + "%";
-            if (percent) percent.textContent = progress + "%";
-            if (bar) bar.setAttribute("aria-valuenow", String(progress));
+            if (fill) {
+                fill.style.width = progress + "%";
+            }
+
+            if (percent) {
+                percent.textContent = progress + "%";
+            }
+
+            if (bar) {
+                bar.setAttribute(
+                    "aria-valuenow",
+                    String(progress)
+                );
+            }
 
             if (status) {
+
                 status.textContent =
-                    progress < 35 ? "IGNITING THE EXPERIENCE" :
-                    progress < 70 ? "LOADING PORTFOLIO" :
-                    "PREPARING YOUR EXPERIENCE";
+                    progress < 35
+                        ? "IGNITING THE EXPERIENCE"
+                        : progress < 70
+                            ? "LOADING PORTFOLIO"
+                            : "PREPARING YOUR EXPERIENCE";
+
             }
+
         }, 100);
 
-        // Do not wait indefinitely for every resource to finish.
-        window.setTimeout(hideScreen, 2500);
-    }
+        /* Hide after 2.5 seconds */
 
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            initializeLoadingScreen,
-            { once: true }
-        );
-    } else {
-        initializeLoadingScreen();
-    }
-})();
+        window.setTimeout(hideScreen, 2500);
+
+    })();
 
 });
